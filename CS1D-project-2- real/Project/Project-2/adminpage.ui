@@ -26,6 +26,32 @@
     <string>here is the admin page</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="Update_Teams_Button">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>270</y>
+     <width>121</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Update Teams</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Update_Stadium_Button">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>240</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Update Stadium</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

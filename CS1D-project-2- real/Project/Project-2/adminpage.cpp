@@ -12,3 +12,15 @@ adminPage::~adminPage()
 {
     delete ui;
 }
+
+void adminPage::on_Update_Teams_Button_clicked()
+{
+
+}
+
+
+void adminPage::on_Update_Stadium_Button_clicked()
+{
+
+}
+
