@@ -1,0 +1,11 @@
+debug/adminlogin.o
+debug/adminpage.o
+debug/displaywindow.o
+debug/main.o
+debug/mainwindow.o
+debug/menuselectwindow.o
+debug/moc_adminlogin.o
+debug/moc_adminpage.o
+debug/moc_displaywindow.o
+debug/moc_mainwindow.o
+debug/moc_menuselectwindow.o
