@@ -12,3 +12,12 @@ DisplayWindow::~DisplayWindow()
 {
     delete ui;
 }
+
+//"Show specific MLB Team Info" button
+void DisplayWindow::on_pushButton_clicked()
+{
+    //If clicked show the teamInfoWindow window
+    teamInfoWindow = new class teamInfoWindow;
+    teamInfoWindow->show();
+}
+
