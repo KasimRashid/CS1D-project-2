@@ -21,3 +21,23 @@ void DisplayWindow::on_pushButton_clicked()
     teamInfoWindow->show();
 }
 
+void DisplayWindow::on_mlbTeamName_pushButton_clicked()
+{
+    teamNameSortedByTeamName = new class teamNameSortedByTeamName;
+    teamNameSortedByTeamName->show();
+}
+
+
+void DisplayWindow::on_teamNameSortedByStadium_pushButton_clicked()
+{
+    teamNameSortedByStadium = new class teamNameSortedByStadium;
+    teamNameSortedByStadium->show();
+}
+
+
+void DisplayWindow::on_americanLeagueSorted_pushButton_clicked()
+{
+    americanTeamsSortedByTeamName = new class americanTeamsSortedByTeamName;
+    americanTeamsSortedByTeamName->show();
+}
+

@@ -2,6 +2,7 @@
 #define MENUSELECTWINDOW_H
 
 #include "displaywindow.h"
+
 #include <QMainWindow>
 
 namespace Ui {
