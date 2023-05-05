@@ -11,27 +11,36 @@ CONFIG += c++17
 SOURCES += \
     adminlogin.cpp \
     adminpage.cpp \
+    americanteamssortedbyteamname.cpp \
     displaywindow.cpp \
     main.cpp \
     mainwindow.cpp \
     menuselectwindow.cpp \
-    teaminfowindow.cpp
+    teaminfowindow.cpp \
+    teamnamesortedbystadium.cpp \
+    teamnamesortedbyteamname.cpp \
 
 HEADERS += \
     adminlogin.h \
     adminpage.h \
+    americanteamssortedbyteamname.h \
     displaywindow.h \
     mainwindow.h \
     menuselectwindow.h \
-    teaminfowindow.h
+    teaminfowindow.h \
+    teamnamesortedbystadium.h \
+    teamnamesortedbyteamname.h \
 
 FORMS += \
     adminlogin.ui \
     adminpage.ui \
+    americanteamssortedbyteamname.ui \
     displaywindow.ui \
     mainwindow.ui \
     menuselectwindow.ui \
-    teaminfowindow.ui
+    teaminfowindow.ui \
+    teamnamesortedbystadium.ui \
+    teamnamesortedbyteamname.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

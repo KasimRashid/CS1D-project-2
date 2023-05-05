@@ -33,7 +33,7 @@
      <string>Show Specific MLB Team Information</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="mlbTeamName_pushButton">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -49,10 +49,10 @@
      </font>
     </property>
     <property name="text">
-     <string>Show MLB Teams</string>
+     <string>MLB Teams Sorted By Team Name</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="americanLeagueSorted_pushButton">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -68,7 +68,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Show American League Teams</string>
+     <string>American League Teams Sorted By Team Name</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
@@ -90,7 +90,7 @@
      <string>Show Open Roof Stadium Info</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="nationalLeagueSorted_pushButton">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -106,10 +106,10 @@
      </font>
     </property>
     <property name="text">
-     <string>Show National League Teams</string>
+     <string>National League Teams Sorted By Team Name</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="teamNameSortedByStadium_pushButton">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -125,7 +125,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Show MLB Stadium Names and Teams</string>
+     <string>MLB Team Names Sorted By Stadium Name</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_7">
@@ -248,7 +248,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

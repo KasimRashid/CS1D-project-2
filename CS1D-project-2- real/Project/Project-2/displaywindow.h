@@ -6,6 +6,9 @@
 #include <QtDebug>
 #include <QFileInfo>
 #include "teaminfowindow.h"
+#include "teamnamesortedbyteamname.h"
+#include "teamnamesortedbystadium.h"
+#include "americanteamssortedbyteamname.h"
 
 namespace Ui {
 class DisplayWindow;
@@ -57,9 +60,19 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_mlbTeamName_pushButton_clicked();
+
+    void on_teamNameSortedByStadium_pushButton_clicked();
+
+    void on_americanLeagueSorted_pushButton_clicked();
+
 private:
     Ui::DisplayWindow *ui;
     teamInfoWindow *teamInfoWindow;
+    teamNameSortedByTeamName* teamNameSortedByTeamName;
+    teamNameSortedByStadium* teamNameSortedByStadium;
+    americanTeamsSortedByTeamName* americanTeamsSortedByTeamName;
+
 };
 
 #endif // DISPLAYWINDOW_H
