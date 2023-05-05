@@ -1,16 +1,16 @@
-#include "americanteamssortedbyteamname.h"
-#include "ui_americanteamssortedbyteamname.h"
+#include "nationalteamsortdbystadiumname.h"
+#include "ui_nationalteamsortdbystadiumname.h"
 
-americanTeamsSortedByTeamName::americanTeamsSortedByTeamName(QWidget *parent) :
+nationalTeamSortdByStadiumName::nationalTeamSortdByStadiumName(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::americanTeamsSortedByTeamName)
+    ui(new Ui::nationalTeamSortdByStadiumName)
 {
     ui->setupUi(this);
 
     //Change the style of the label at the top of the text browser
     ui->label->setStyleSheet("font : 16pt Times New Roman");
 
-    this->setWindowTitle("American League Teams Sorted");
+    this->setWindowTitle("National League Teams Sorted");
     QString data = "";
 
     SetDataBase();
@@ -19,7 +19,7 @@ americanTeamsSortedByTeamName::americanTeamsSortedByTeamName(QWidget *parent) :
     q.exec("");
 
     //Sql statement to show the team name, the corresponding stadium and their league sorted by team name
-    q.exec("SELECT Team_name, Stadium_name, League FROM Stadium WHERE League LIKE '%American%' ORDER BY Team_name ASC");
+    q.exec("SELECT Team_name, Stadium_name, League FROM Stadium WHERE League LIKE '%National%' ORDER BY Stadium_name ASC");
 
 
     while(q.next())
@@ -32,9 +32,10 @@ americanTeamsSortedByTeamName::americanTeamsSortedByTeamName(QWidget *parent) :
     ui->textBrowser->setText(data);
 
     closeDBDebug();
+
 }
 
-americanTeamsSortedByTeamName::~americanTeamsSortedByTeamName()
+nationalTeamSortdByStadiumName::~nationalTeamSortdByStadiumName()
 {
     delete ui;
 }
