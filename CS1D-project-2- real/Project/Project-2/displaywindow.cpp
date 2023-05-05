@@ -41,3 +41,10 @@ void DisplayWindow::on_americanLeagueSorted_pushButton_clicked()
     americanTeamsSortedByTeamName->show();
 }
 
+
+void DisplayWindow::on_nationalLeagueSorted_pushButton_clicked()
+{
+    nationalTeamSortdByStadiumName = new class nationalTeamSortdByStadiumName;
+    nationalTeamSortdByStadiumName->show();
+}
+

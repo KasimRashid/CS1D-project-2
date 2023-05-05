@@ -16,6 +16,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     menuselectwindow.cpp \
+    nationalteamsortdbystadiumname.cpp \
     teaminfowindow.cpp \
     teamnamesortedbystadium.cpp \
     teamnamesortedbyteamname.cpp \
@@ -27,6 +28,7 @@ HEADERS += \
     displaywindow.h \
     mainwindow.h \
     menuselectwindow.h \
+    nationalteamsortdbystadiumname.h \
     teaminfowindow.h \
     teamnamesortedbystadium.h \
     teamnamesortedbyteamname.h \
@@ -38,6 +40,7 @@ FORMS += \
     displaywindow.ui \
     mainwindow.ui \
     menuselectwindow.ui \
+    nationalteamsortdbystadiumname.ui \
     teaminfowindow.ui \
     teamnamesortedbystadium.ui \
     teamnamesortedbyteamname.ui \
