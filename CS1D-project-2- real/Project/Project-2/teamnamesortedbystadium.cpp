@@ -7,7 +7,6 @@ teamNameSortedByStadium::teamNameSortedByStadium(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
     //Change the style of the label at the top of the text browser
     ui->label->setStyleSheet("font : 16pt Times New Roman");
 
