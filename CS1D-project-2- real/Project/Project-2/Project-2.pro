@@ -14,12 +14,15 @@ SOURCES += \
     americanteamssortedbyteamname.cpp \
     dateopenedsorted.cpp \
     displaywindow.cpp \
+    greatestdistancecenter.cpp \
     main.cpp \
     mainwindow.cpp \
     menuselectwindow.cpp \
     nationalteamsortdbystadiumname.cpp \
     parktypologysorted.cpp \
     rooftypesorted.cpp \
+    seatingcapacitysorted.cpp \
+    smallestdistancecenter.cpp \
     teaminfowindow.cpp \
     teamnamesortedbystadium.cpp \
     teamnamesortedbyteamname.cpp \
@@ -30,11 +33,14 @@ HEADERS += \
     americanteamssortedbyteamname.h \
     dateopenedsorted.h \
     displaywindow.h \
+    greatestdistancecenter.h \
     mainwindow.h \
     menuselectwindow.h \
     nationalteamsortdbystadiumname.h \
     parktypologysorted.h \
     rooftypesorted.h \
+    seatingcapacitysorted.h \
+    smallestdistancecenter.h \
     teaminfowindow.h \
     teamnamesortedbystadium.h \
     teamnamesortedbyteamname.h \
@@ -45,11 +51,14 @@ FORMS += \
     americanteamssortedbyteamname.ui \
     dateopenedsorted.ui \
     displaywindow.ui \
+    greatestdistancecenter.ui \
     mainwindow.ui \
     menuselectwindow.ui \
     nationalteamsortdbystadiumname.ui \
     parktypologysorted.ui \
     rooftypesorted.ui \
+    seatingcapacitysorted.ui \
+    smallestdistancecenter.ui \
     teaminfowindow.ui \
     teamnamesortedbystadium.ui \
     teamnamesortedbyteamname.ui \

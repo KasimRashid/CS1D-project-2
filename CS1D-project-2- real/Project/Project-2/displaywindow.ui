@@ -147,7 +147,7 @@
      <string>Stadiums Sorted By Date Opened</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="seatingCapacity_pushButton">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -163,7 +163,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Show MLB Stadiums and Total Seating Capacity</string>
+     <string>Stadiums Sorted by Seating Capacity</string>
     </property>
    </widget>
    <widget class="QPushButton" name="parkTypologySorted_pushButton">
@@ -185,7 +185,7 @@
      <string>Park Typology Sorted</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_10">
+   <widget class="QPushButton" name="greatestDistance_pushButton">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -204,7 +204,7 @@
      <string>Greatest Distance to Center Field</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_11">
+   <widget class="QPushButton" name="smallesDistance_pushButton">
     <property name="geometry">
      <rect>
       <x>250</x>

@@ -2,9 +2,6 @@
 #define DISPLAYWINDOW_H
 
 #include <QMainWindow>
-#include <QtSql>
-#include <QtDebug>
-#include <QFileInfo>
 #include "teaminfowindow.h"
 #include "teamnamesortedbyteamname.h"
 #include "teamnamesortedbystadium.h"
@@ -13,6 +10,9 @@
 #include "parktypologysorted.h"
 #include "rooftypesorted.h"
 #include "dateopenedsorted.h"
+#include "seatingcapacitysorted.h"
+#include "greatestdistancecenter.h"
+#include "smallestdistancecenter.h"
 
 namespace Ui {
 class DisplayWindow;
@@ -43,6 +43,12 @@ private slots:
 
     void on_dateOpened_pushButton_clicked();
 
+    void on_seatingCapacity_pushButton_clicked();
+
+    void on_greatestDistance_pushButton_clicked();
+
+    void on_smallesDistance_pushButton_clicked();
+
 private:
     Ui::DisplayWindow *ui;
     teamInfoWindow *teamInfoWindow;
@@ -53,6 +59,9 @@ private:
     parkTypologySorted* parkTypologySorted;
     roofTypeSorted* roofTypeSorted;
     dateOpenedSorted* dateOpenedSorted;
+    seatingCapacitySorted* seatingCapacitySorted;
+    greatestDistanceCenter* greatestDistanceCenter;
+    smallestDistanceCenter* smallestDistanceCenter;
 };
 
 #endif // DISPLAYWINDOW_H
