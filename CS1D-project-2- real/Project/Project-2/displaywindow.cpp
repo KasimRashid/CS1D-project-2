@@ -69,3 +69,24 @@ void DisplayWindow::on_dateOpened_pushButton_clicked()
     dateOpenedSorted->show();
 }
 
+
+void DisplayWindow::on_seatingCapacity_pushButton_clicked()
+{
+    seatingCapacitySorted = new class seatingCapacitySorted;
+    seatingCapacitySorted->show();
+}
+
+
+void DisplayWindow::on_greatestDistance_pushButton_clicked()
+{
+    greatestDistanceCenter = new class greatestDistanceCenter;
+    greatestDistanceCenter->show();
+}
+
+
+void DisplayWindow::on_smallesDistance_pushButton_clicked()
+{
+    smallestDistanceCenter = new class smallestDistanceCenter;
+    smallestDistanceCenter->show();
+}
+
