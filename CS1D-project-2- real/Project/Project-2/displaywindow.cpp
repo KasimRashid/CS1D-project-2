@@ -48,3 +48,10 @@ void DisplayWindow::on_nationalLeagueSorted_pushButton_clicked()
     nationalTeamSortdByStadiumName->show();
 }
 
+
+void DisplayWindow::on_parkTypologySorted_pushButton_clicked()
+{
+    parkTypologySorted = new class parkTypologySorted;
+    parkTypologySorted->show();
+}
+
