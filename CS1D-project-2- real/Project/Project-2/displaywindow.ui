@@ -166,7 +166,7 @@
      <string>Show MLB Stadiums and Total Seating Capacity</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="parkTypologySorted_pushButton">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -182,7 +182,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Park Typology</string>
+     <string>Park Typology Sorted</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_10">

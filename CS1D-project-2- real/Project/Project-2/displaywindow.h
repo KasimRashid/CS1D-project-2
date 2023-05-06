@@ -10,6 +10,7 @@
 #include "teamnamesortedbystadium.h"
 #include "americanteamssortedbyteamname.h"
 #include "nationalteamsortdbystadiumname.h"
+#include "parktypologysorted.h"
 
 namespace Ui {
 class DisplayWindow;
@@ -34,6 +35,8 @@ private slots:
 
     void on_nationalLeagueSorted_pushButton_clicked();
 
+    void on_parkTypologySorted_pushButton_clicked();
+
 private:
     Ui::DisplayWindow *ui;
     teamInfoWindow *teamInfoWindow;
@@ -41,7 +44,7 @@ private:
     teamNameSortedByStadium* teamNameSortedByStadium;
     americanTeamsSortedByTeamName* americanTeamsSortedByTeamName;
     nationalTeamSortdByStadiumName* nationalTeamSortdByStadiumName;
-
+    parkTypologySorted* parkTypologySorted;
 };
 
 #endif // DISPLAYWINDOW_H
