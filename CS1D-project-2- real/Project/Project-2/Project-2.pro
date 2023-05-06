@@ -12,12 +12,14 @@ SOURCES += \
     adminlogin.cpp \
     adminpage.cpp \
     americanteamssortedbyteamname.cpp \
+    dateopenedsorted.cpp \
     displaywindow.cpp \
     main.cpp \
     mainwindow.cpp \
     menuselectwindow.cpp \
     nationalteamsortdbystadiumname.cpp \
     parktypologysorted.cpp \
+    rooftypesorted.cpp \
     teaminfowindow.cpp \
     teamnamesortedbystadium.cpp \
     teamnamesortedbyteamname.cpp \
@@ -26,11 +28,13 @@ HEADERS += \
     adminlogin.h \
     adminpage.h \
     americanteamssortedbyteamname.h \
+    dateopenedsorted.h \
     displaywindow.h \
     mainwindow.h \
     menuselectwindow.h \
     nationalteamsortdbystadiumname.h \
     parktypologysorted.h \
+    rooftypesorted.h \
     teaminfowindow.h \
     teamnamesortedbystadium.h \
     teamnamesortedbyteamname.h \
@@ -39,11 +43,13 @@ FORMS += \
     adminlogin.ui \
     adminpage.ui \
     americanteamssortedbyteamname.ui \
+    dateopenedsorted.ui \
     displaywindow.ui \
     mainwindow.ui \
     menuselectwindow.ui \
     nationalteamsortdbystadiumname.ui \
     parktypologysorted.ui \
+    rooftypesorted.ui \
     teaminfowindow.ui \
     teamnamesortedbystadium.ui \
     teamnamesortedbyteamname.ui \

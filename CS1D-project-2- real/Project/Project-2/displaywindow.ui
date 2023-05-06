@@ -71,7 +71,7 @@
      <string>American League Teams Sorted By Team Name</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="openRoof_pushButton">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -87,7 +87,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Show Open Roof Stadium Info</string>
+     <string>Open Roof Stadiums Sorted</string>
     </property>
    </widget>
    <widget class="QPushButton" name="nationalLeagueSorted_pushButton">
@@ -128,7 +128,7 @@
      <string>MLB Team Names Sorted By Stadium Name</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="dateOpened_pushButton">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -144,7 +144,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Show MLB Stadiums By Date Opened</string>
+     <string>Stadiums Sorted By Date Opened</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_8">

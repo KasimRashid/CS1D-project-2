@@ -55,3 +55,17 @@ void DisplayWindow::on_parkTypologySorted_pushButton_clicked()
     parkTypologySorted->show();
 }
 
+
+void DisplayWindow::on_openRoof_pushButton_clicked()
+{
+    roofTypeSorted = new class roofTypeSorted;
+    roofTypeSorted->show();
+}
+
+
+void DisplayWindow::on_dateOpened_pushButton_clicked()
+{
+    dateOpenedSorted = new class dateOpenedSorted;
+    dateOpenedSorted->show();
+}
+
