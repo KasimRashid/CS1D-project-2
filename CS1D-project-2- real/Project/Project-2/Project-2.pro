@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     adminlogin.cpp \
+    adminmaintence.cpp \
     adminpage.cpp \
     americanteamssortedbyteamname.cpp \
     dateopenedsorted.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
 
 HEADERS += \
     adminlogin.h \
+    adminmaintence.h \
     adminpage.h \
     americanteamssortedbyteamname.h \
     dateopenedsorted.h \
@@ -47,6 +49,7 @@ HEADERS += \
 
 FORMS += \
     adminlogin.ui \
+    adminmaintence.ui \
     adminpage.ui \
     americanteamssortedbyteamname.ui \
     dateopenedsorted.ui \
