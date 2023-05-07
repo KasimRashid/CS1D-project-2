@@ -1,22 +1,26 @@
-#ifndef SMALLESTDISTANCECENTER_H
-#define SMALLESTDISTANCECENTER_H
+#ifndef ADMINMAINTENCE_H
+#define ADMINMAINTENCE_H
 
+#include <QMainWindow>
 #include <QMainWindow>
 #include <QtSql>
 #include <QtDebug>
 #include <QFileInfo>
+#include <QFile>
+#include <QTextStream>
+#include <QMessageBox>
 
 namespace Ui {
-class smallestDistanceCenter;
+class adminMaintence;
 }
 
-class smallestDistanceCenter : public QMainWindow
+class adminMaintence : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit smallestDistanceCenter(QWidget *parent = nullptr);
-    ~smallestDistanceCenter();
+    explicit adminMaintence(QWidget *parent = nullptr);
+    ~adminMaintence();
 
     // Holds the database file path
     QSqlDatabase db;
@@ -52,8 +56,28 @@ public:
         db.close();
     }
 
+private slots:
+    void on_teamName_comboBox_currentIndexChanged(int index);
+
+    void on_souvenirsTeam_comboBox_currentIndexChanged(int index);
+
+    void on_selectSouvenir_comboBox_currentIndexChanged(int index);
+
+    void on_editPrice_pushButton_clicked();
+
+    void on_addSouvenir_pushButton_clicked();
+
+    void on_rmSouvenir_pushButton_clicked();
+
+    void on_AddTeam_pushButton_clicked();
+
+    void on_editCapacity_pushButton_clicked();
+
 private:
-    Ui::smallestDistanceCenter *ui;
+    Ui::adminMaintence *ui;
+
+    void addTeam(QTextStream& fileNewTeam);
+    bool checkPrice(QString price);
 };
 
-#endif // SMALLESTDISTANCECENTER_H
+#endif // ADMINMAINTENCE_H

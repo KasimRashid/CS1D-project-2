@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>adminMaintence</class>
+ <widget class="QMainWindow" name="adminMaintence">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QComboBox" name="souvenirsTeam_comboBox">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>40</y>
+      <width>231</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="souvenir_textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>80</y>
+      <width>231</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="teamName_comboBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>271</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="team_textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>261</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>10</y>
+      <width>201</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add/Edit MLB Team</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>10</y>
+      <width>271</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Edit/Add/Remove MLB Team Souvenirs</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="selectSouvenir_comboBox">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>280</y>
+      <width>221</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="souvenirName_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>400</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="souvenirPrice_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>450</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addSouvenir_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>689</x>
+      <y>420</y>
+      <width>91</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add Souvenir</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="rmSouvenir_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>490</y>
+      <width>141</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Remove Souvenir</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>380</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Souvenir Name:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>430</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Souvenir Price:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="capacity_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>129</x>
+      <y>284</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="editCapacity_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>280</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Edit Capacity </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="surface_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>185</x>
+      <y>374</y>
+      <width>171</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="editPlayingSurface_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>161</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Edit Playing Surface</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="editRof_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>241</x>
+      <y>280</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Edit Roof Type</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="roof_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>349</x>
+      <y>284</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="typology_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>349</x>
+      <y>324</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="editTypology_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>241</x>
+      <y>320</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Edit Typology</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="editDate_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>320</y>
+      <width>121</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Edit Date Opened</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="date_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>139</x>
+      <y>324</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="AddTeam_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>40</y>
+      <width>111</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add New Team</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="editDistanceCenter_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>410</y>
+      <width>161</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Edit Distance to Center</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="distanceCenter_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>183</x>
+      <y>414</y>
+      <width>171</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>330</y>
+      <width>234</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="editPrice_pushButton">
+       <property name="text">
+        <string>Edit Price</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="editPrice_lineEdit"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>500</y>
+      <width>411</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="editStadiumName_pushButton">
+       <property name="text">
+        <string>Edit Stadium Name</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="stadiumName_lineEdit"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>460</y>
+      <width>401</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <item>
+      <widget class="QPushButton" name="editLocation_pushButton">
+       <property name="text">
+        <string>Edit Location</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="location_lineEdit"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -29,7 +29,7 @@ public:
         db = QSqlDatabase::addDatabase("QSQLITE");
 
         //Adam's db file path
-        QString path = "/Users/adamortiz/Desktop/CS1D-Project2-Git/CS1D-project-2/CS1D-project-2- real/Baseball.db";
+        QString path = "/Users/adamortiz/Desktop/CS1D-Project2-Git/CS1D-project-2/Baseball.db";
 
         qInfo() << path;
         db.setDatabaseName(path);

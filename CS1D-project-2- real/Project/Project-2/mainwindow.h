@@ -3,6 +3,9 @@
 
 #include "menuselectwindow.h"
 #include <QMainWindow>
+#include <QtSql>
+#include <QtDebug>
+#include <QFileInfo>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,6 +18,40 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    // Holds the database file path
+    QSqlDatabase db;
+
+    void SetDataBase()
+    {
+
+        // Sets database path and name for the database variable
+        db = QSqlDatabase::addDatabase("QSQLITE");
+
+        //Adam's db file path
+        QString path = "/Users/adamortiz/Desktop/CS1D-Project2-Git/CS1D-project-2/Baseball.db";
+
+        qInfo() << path;
+        db.setDatabaseName(path);
+    }
+
+    void openDBDebug()
+    {
+        // Opens database and output debug message if opened sucessfully
+        if(db.open())
+        {
+            qDebug() << ("Connected.");
+        }
+        else
+        {
+            qDebug() << ("Not Connected.");
+        }
+    }
+
+    void closeDBDebug()
+    {
+        db.close();
+    }
 
 private slots:
 

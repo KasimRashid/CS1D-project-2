@@ -15,16 +15,26 @@ adminLogin::~adminLogin()
 
 void adminLogin::on_pushButton_clicked()
 {
+    ///Variables to store the user entered data
     QString Unsername = ui->name->text();
     QString Password = ui->password->text();
-    if(Unsername == "a" && Password == "a"){
-adminPage adminpage;
-adminpage.setModal(true);
-adminpage.exec();
-    }
-else{
-ui->wrongPW->setText("wrong username or password");
 
+    adminMaintence = new class adminMaintence;
+
+    if (Unsername == "a" && Password == "a"){
+//        adminPage adminpage;
+//        adminpage.setModal(true);
+//        adminpage.exec();
+
+        ///Hide the login page after the user enters a correct password
+        this->hide();
+        ///Show the admin maintence window
+        adminMaintence->show();
+
+    }
+    else {
+        ///Incorrect password
+        ui->wrongPW->setText("wrong username or password");
     }
 }
 
