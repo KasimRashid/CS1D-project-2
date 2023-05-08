@@ -135,7 +135,7 @@ void adminMaintence::on_editPrice_pushButton_clicked()
     }
 }
 
-///This function will check that the modified price
+///This function will check the modified price
 bool adminMaintence::checkPrice(QString editPrice)
 {
     ///Edit the string so that the decimal place is removed (12.99 -> 1299).
@@ -222,6 +222,8 @@ void adminMaintence::on_AddTeam_pushButton_clicked()
     //Adam's StadiumAddon.txt file Path (Replace with your on file path)
     QFile file("/Users/adamortiz/Desktop/CS1D-Project2-Git/CS1D-project-2/StadiumAddon.txt");
 
+    QFile fileNewDistance("/Users/adamortiz/Desktop/CS1D-Project2-Git/CS1D-project-2/DistanceAddon.txt");
+
     qDebug() << teamSelected;
 
     ///Only add the new team if the new team is selected it the combo box
@@ -244,6 +246,20 @@ void adminMaintence::on_AddTeam_pushButton_clicked()
         {
             QMessageBox::critical(this, "Error", "Failed adding team. Error opening txt");
         }
+        ///If the new distance file opens successfully then add its data
+        if(fileNewDistance.open(QIODevice::ReadOnly | QIODevice::Text))
+        {
+            //Add new team distances
+            QTextStream fileNewTeamDistance(&fileNewDistance);
+
+            addTeamDistance(fileNewTeamDistance);
+
+            fileNewDistance.close();
+        }
+        else
+        {
+            QMessageBox::critical(this, "Error", "Failed adding team distance. Error opening txt");
+        }
     }
     else
     {
@@ -260,10 +276,6 @@ void adminMaintence::addTeam(QTextStream& fileNewTeam)
     QString readLine;
     QString addDB;
     QSqlQuery insert;
-
-    QSqlQuery insertDistance;
-    QString newDistances;
-
     openDBDebug();
 
     //Add the txt file data into the data base
@@ -282,11 +294,41 @@ void adminMaintence::addTeam(QTextStream& fileNewTeam)
 
         //Clear list for the next line.
         newTeamData.clear();
-
-
-
     }
-    //Close DB
+
+    closeDBDebug();
+}
+
+
+void adminMaintence::addTeamDistance(QTextStream& fileNewDistance)
+{
+    QStringList newTeamDistance;
+    QSqlQuery insertDistance;
+    QString readLineDistance;
+    QString addDBDistance;
+
+    openDBDebug();
+
+    //Add new distance into DB
+    //Add the txt file data into the data base
+    while(!fileNewDistance.atEnd())
+    {
+        //Read the txt file and split the line at ":".
+        readLineDistance = fileNewDistance.readLine();
+        newTeamDistance.append(readLineDistance.split(':'));
+
+        //Get the sql exec parameters
+        addDBDistance = "INSERT into Distances (Origin_stadium, Destination_stadium, Distance) "
+                "VALUES (\'" + newTeamDistance.at(0) + "\', \'" + newTeamDistance.at(1) + "\', \'" + newTeamDistance.at(2) + "\')";
+
+        //Execute sql query
+        insertDistance.exec(addDBDistance);
+
+        //Clear list for the next line.
+        newTeamDistance.clear();
+    }
+
+    ///Close DB debug
     closeDBDebug();
 }
 
@@ -301,28 +343,266 @@ void adminMaintence::on_editCapacity_pushButton_clicked()
 
     QSqlQuery q;
 
-    //Show error message if price is invalid
-    if (checkPrice(editCapacity))
+    ///check if number is valid
+    if (checkNum(editCapacity))
     {
+        ///open db
         openDBDebug();
 
+        ///Sql execute statement
         q.exec("UPDATE Stadium SET Seating_capacity = '"+ editCapacity +"' WHERE Team_name = '" + editTeamName + "'");
 
+        ///close db
         closeDBDebug();
 
         ///Inform that the price was updated
         QMessageBox::information(this, "", "Edited seating capacity");
     }
     else {
+        ///Show error message if price is invalid
         QMessageBox::critical(this, "", "Invalid number");
     }
+}
 
+
+void adminMaintence::on_editRoof_pushButton_clicked()
+{
+    ///Get the current team name selected
+    QString editTeamName = ui->teamName_comboBox->currentText();
+    qDebug() << editTeamName;
+    ///Store the new roof entered by the user
+    QString editRoof = ui->roof_lineEdit->text();
+
+    QSqlQuery q;
+
+    ///check if number is valid
+    if (checkString(editRoof))
+    {
+        ///open db
+        openDBDebug();
+
+        ///Sql execute statement
+        q.exec("UPDATE Stadium SET Roof_type = '"+ editRoof +"' WHERE Team_name = '" + editTeamName + "'");
+
+        ///close db
+        closeDBDebug();
+
+        ///Inform that the price was updated
+        QMessageBox::information(this, "", "Edited roof type");
+    }
+    else {
+        ///Show error message if price is invalid
+        QMessageBox::critical(this, "", "Invalid number");
+    }
+}
+
+
+void adminMaintence::on_editDate_pushButton_clicked()
+{
+    ///Get the current team name selected
+    QString editTeamName = ui->teamName_comboBox->currentText();
+    qDebug() << editTeamName;
+    ///Store the new date entered by the user
+    QString editDate = ui->date_lineEdit->text();
+
+    QSqlQuery q;
+
+    ///check if number is valid
+    if (checkPrice(editDate))
+    {
+        ///open db
+        openDBDebug();
+
+        ///Sql execute statement
+        q.exec("UPDATE Stadium SET Date_opened = '"+ editDate +"' WHERE Team_name = '" + editTeamName + "'");
+
+        ///close db
+        closeDBDebug();
+
+        ///Inform that the price was updated
+        QMessageBox::information(this, "", "Edited Opening date");
+    }
+    else {
+        ///Show error message if price is invalid
+        QMessageBox::critical(this, "", "Invalid number");
+    }
+}
+
+
+void adminMaintence::on_editTypology_pushButton_clicked()
+{
+    ///Get the current team name selected
+    QString editTeamName = ui->teamName_comboBox->currentText();
+    qDebug() << editTeamName;
+    ///Store the new date entered by the user
+    QString editTypology = ui->typology_lineEdit->text();
+
+    QSqlQuery q;
+
+    ///check if number is valid
+    if (checkString(editTypology))
+    {
+        ///open db
+        openDBDebug();
+
+        ///Sql execute statement
+        q.exec("UPDATE Stadium SET Typology = '"+ editTypology +"' WHERE Team_name = '" + editTeamName + "'");
+
+        ///close db
+        closeDBDebug();
+
+        ///Inform that the price was updated
+        QMessageBox::information(this, "", "Edited stadium typology");
+    }
+    else {
+        ///Show error message if price is invalid
+        QMessageBox::critical(this, "", "Invalid string");
+    }
+}
+
+
+void adminMaintence::on_editPlayingSurface_pushButton_clicked()
+{
+    ///Get the current team name selected
+    QString editTeamName = ui->teamName_comboBox->currentText();
+    qDebug() << editTeamName;
+    ///Store the new playing surface entered by the user
+    QString editPlayingSurface = ui->surface_lineEdit->text();
+
+    QSqlQuery q;
+
+    ///check if string contains all letters
+    if (checkString(editPlayingSurface))
+    {
+        ///open db
+        openDBDebug();
+
+        ///Sql execute statement
+        q.exec("UPDATE Stadium SET Playing_surface = '"+ editPlayingSurface +"' WHERE Team_name = '" + editTeamName + "'");
+
+        ///close db
+        closeDBDebug();
+
+        ///Inform that the price was updated
+        QMessageBox::information(this, "", "Edited stadium playing surface");
+    }
+    else {
+        ///Show error message if string is invalid
+        QMessageBox::critical(this, "", "Invalid string");
+    }
+}
+
+
+///This function will check if a string contains all letters
+bool adminMaintence::checkString(QString s)
+{
+    ///Edit the string so that the spaces are replace
+    s.replace(QString(" "), QString(""));
+
+    ///Check every character in the string for a number.
+    for(int i = 0; i < s.size(); i++)
+    {
+        if(!s[i].isLetter())
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+void adminMaintence::on_editDistanceCenter_pushButton_clicked()
+{
+    ///Get the current team name selected
+    QString editTeamName = ui->teamName_comboBox->currentText();
+    qDebug() << editTeamName;
+    ///Store the new distance to center entered by the user
+    QString editDistanceCenter = ui->distanceCenter_lineEdit->text();
+
+    QSqlQuery q;
+
+    ///open db
+    openDBDebug();
+
+    ///Sql execute statement
+    q.exec("UPDATE Stadium SET Distance_to_center = '"+ editDistanceCenter +"' WHERE Team_name = '" + editTeamName + "'");
+
+    ///close db
+    closeDBDebug();
+
+    ///Inform that the distance to center was updated
+    QMessageBox::information(this, "", "Edited the distance to center");
+}
+
+
+void adminMaintence::on_editLocation_pushButton_clicked()
+{
+    ///Get the current team name selected
+    QString editTeamName = ui->teamName_comboBox->currentText();
+    qDebug() << editTeamName;
+    ///Store the new location entered by the user
+    QString editLocation = ui->location_lineEdit->text();
+
+    QSqlQuery q;
+
+    ///open db
+    openDBDebug();
+
+    ///Sql execute statement
+    q.exec("UPDATE Stadium SET Location = '"+ editLocation +"' WHERE Team_name = '" + editTeamName + "'");
+
+    ///close db
+    closeDBDebug();
+
+    ///Inform that the location was updated
+    QMessageBox::information(this, "", "Edited the location");
 
 }
 
 
+void adminMaintence::on_editStadiumName_pushButton_clicked()
+{
+    ///Get the current team name selected
+    QString editTeamName = ui->teamName_comboBox->currentText();
+    qDebug() << editTeamName;
+    ///Store the new playing surface entered by the user
+    QString editStadiumName = ui->stadiumName_lineEdit->text();
 
+    QSqlQuery q;
 
+    ///check if string contains all letters
+    if (checkString(editStadiumName))
+    {
+        ///open db
+        openDBDebug();
 
+        ///Sql execute statement
+        q.exec("UPDATE Stadium SET Stadium_name = '"+ editStadiumName +"' WHERE Team_name = '" + editTeamName + "'");
 
+        ///close db
+        closeDBDebug();
 
+        ///Inform that the price was updated
+        QMessageBox::information(this, "", "Edited stadium name");
+    }
+    else {
+        ///Show error message if string is invalid
+        QMessageBox::critical(this, "", "Invalid string");
+    }
+}
+
+///This function will check the entered number
+bool adminMaintence::checkNum(QString editNum)
+{
+    ///Edit the string so that the decimal place is removed (12.99 -> 1299).
+    editNum.replace(QString(","), QString(""));
+
+    ///Check every character in the string for a number.
+    for(int i = 0; i < editNum.size(); i++)
+    {
+        if(!editNum[i].isDigit())
+        {
+            return false;
+        }
+    }
+    return true;
+}
