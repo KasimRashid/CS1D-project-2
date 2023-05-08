@@ -73,11 +73,28 @@ private slots:
 
     void on_editCapacity_pushButton_clicked();
 
+    void on_editRoof_pushButton_clicked();
+
+    void on_editDate_pushButton_clicked();
+
+    void on_editTypology_pushButton_clicked();
+
+    void on_editPlayingSurface_pushButton_clicked();
+
+    void on_editDistanceCenter_pushButton_clicked();
+
+    void on_editLocation_pushButton_clicked();
+
+    void on_editStadiumName_pushButton_clicked();
+
 private:
     Ui::adminMaintence *ui;
 
     void addTeam(QTextStream& fileNewTeam);
+    void addTeamDistance(QTextStream& fileNewTeam);
     bool checkPrice(QString price);
+    bool checkString(QString s);
+    bool checkNum(QString editNum);
 };
 
 #endif // ADMINMAINTENCE_H
