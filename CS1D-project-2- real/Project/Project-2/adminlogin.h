@@ -3,9 +3,6 @@
 
 #include <QDialog>
 #include <QMainWindow>
-
-#include "ui_adminpage.h"
-#include "adminpage.h"
 #include "adminmaintence.h"
 
 namespace Ui {
