@@ -12,17 +12,20 @@ SOURCES += \
     adminlogin.cpp \
     adminmaintence.cpp \
     americanteamssortedbyteamname.cpp \
+    customtripwindow.cpp \
     dateopenedsorted.cpp \
     displaywindow.cpp \
     greatestdistancecenter.cpp \
     main.cpp \
     mainwindow.cpp \
+    marlinspark.cpp \
     menuselectwindow.cpp \
     nationalteamsortdbystadiumname.cpp \
     parktypologysorted.cpp \
     rooftypesorted.cpp \
     seatingcapacitysorted.cpp \
     smallestdistancecenter.cpp \
+    summarypage.cpp \
     teaminfowindow.cpp \
     teamnamesortedbystadium.cpp \
     teamnamesortedbyteamname.cpp \
@@ -31,16 +34,19 @@ HEADERS += \
     adminlogin.h \
     adminmaintence.h \
     americanteamssortedbyteamname.h \
+    customtripwindow.h \
     dateopenedsorted.h \
     displaywindow.h \
     greatestdistancecenter.h \
     mainwindow.h \
+    marlinspark.h \
     menuselectwindow.h \
     nationalteamsortdbystadiumname.h \
     parktypologysorted.h \
     rooftypesorted.h \
     seatingcapacitysorted.h \
     smallestdistancecenter.h \
+    summarypage.h \
     teaminfowindow.h \
     teamnamesortedbystadium.h \
     teamnamesortedbyteamname.h \
@@ -49,16 +55,19 @@ FORMS += \
     adminlogin.ui \
     adminmaintence.ui \
     americanteamssortedbyteamname.ui \
+    customtripwindow.ui \
     dateopenedsorted.ui \
     displaywindow.ui \
     greatestdistancecenter.ui \
     mainwindow.ui \
+    marlinspark.ui \
     menuselectwindow.ui \
     nationalteamsortdbystadiumname.ui \
     parktypologysorted.ui \
     rooftypesorted.ui \
     seatingcapacitysorted.ui \
     smallestdistancecenter.ui \
+    summarypage.ui \
     teaminfowindow.ui \
     teamnamesortedbystadium.ui \
     teamnamesortedbyteamname.ui \

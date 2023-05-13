@@ -37,5 +37,8 @@ void MenuSelectWindow::on_backButton_clicked()
 void MenuSelectWindow::on_customButton_clicked()
 {
 
+    customTripWindow = new CustomTripWindow;
+    customTripWindow->show();
+
 }
 

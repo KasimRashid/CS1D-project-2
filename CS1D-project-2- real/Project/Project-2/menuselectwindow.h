@@ -1,6 +1,7 @@
 #ifndef MENUSELECTWINDOW_H
 #define MENUSELECTWINDOW_H
 
+#include "customtripwindow.h"
 #include "displaywindow.h"
 
 #include <QMainWindow>
@@ -31,6 +32,8 @@ private slots:
 private:
     Ui::MenuSelectWindow *ui;
     DisplayWindow *displaywindow;
+
+    CustomTripWindow *customTripWindow;
 //    MainWindow *mainwindow;
 };
 

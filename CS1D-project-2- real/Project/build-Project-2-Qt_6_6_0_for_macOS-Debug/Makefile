@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.0 -Wall -Wextra $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.0 -Wall -Wextra $(DEFINES)
-INCPATH       = -I../Project-2 -I. -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/AGL.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib
+INCPATH       = -I../Project-2 -I. -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/AGL.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib
 QMAKE         = /Users/allentarasyuk/Documents/QT/6.6.0/macos/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -37,10 +37,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Project-21.0.0
-DISTDIR = /Users/allentarasyuk/Desktop/Baseball/CS1D-project-2/Project/build-Project-2-Qt_6_6_0_for_macOS-Debug/.tmp/Project-21.0.0
+DISTDIR = /Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2-\ real/Project/build-Project-2-Qt_6_6_0_for_macOS-Debug/.tmp/Project-21.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.0 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib
-LIBS          = $(SUBLIBS) -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib -framework QtWidgets -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtCore -framework IOKit -framework DiskArbitration -framework AGL -framework OpenGL   
+LIBS          = $(SUBLIBS) -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib -framework QtWidgets -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtSql -framework QtCore -framework IOKit -framework DiskArbitration -framework AGL -framework OpenGL   
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 SED           = sed
@@ -52,19 +52,83 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../Project-2/displaywindow.cpp \
+SOURCES       = ../Project-2/adminlogin.cpp \
+		../Project-2/adminmaintence.cpp \
+		../Project-2/americanteamssortedbyteamname.cpp \
+		../Project-2/customtripwindow.cpp \
+		../Project-2/dateopenedsorted.cpp \
+		../Project-2/displaywindow.cpp \
+		../Project-2/greatestdistancecenter.cpp \
 		../Project-2/main.cpp \
 		../Project-2/mainwindow.cpp \
-		../Project-2/menuselectwindow.cpp moc_displaywindow.cpp \
+		../Project-2/marlinspark.cpp \
+		../Project-2/menuselectwindow.cpp \
+		../Project-2/nationalteamsortdbystadiumname.cpp \
+		../Project-2/parktypologysorted.cpp \
+		../Project-2/rooftypesorted.cpp \
+		../Project-2/seatingcapacitysorted.cpp \
+		../Project-2/smallestdistancecenter.cpp \
+		../Project-2/summarypage.cpp \
+		../Project-2/teaminfowindow.cpp \
+		../Project-2/teamnamesortedbystadium.cpp \
+		../Project-2/teamnamesortedbyteamname.cpp moc_adminlogin.cpp \
+		moc_adminmaintence.cpp \
+		moc_americanteamssortedbyteamname.cpp \
+		moc_customtripwindow.cpp \
+		moc_dateopenedsorted.cpp \
+		moc_displaywindow.cpp \
+		moc_greatestdistancecenter.cpp \
 		moc_mainwindow.cpp \
-		moc_menuselectwindow.cpp
-OBJECTS       = displaywindow.o \
+		moc_marlinspark.cpp \
+		moc_menuselectwindow.cpp \
+		moc_nationalteamsortdbystadiumname.cpp \
+		moc_parktypologysorted.cpp \
+		moc_rooftypesorted.cpp \
+		moc_seatingcapacitysorted.cpp \
+		moc_smallestdistancecenter.cpp \
+		moc_summarypage.cpp \
+		moc_teaminfowindow.cpp \
+		moc_teamnamesortedbystadium.cpp \
+		moc_teamnamesortedbyteamname.cpp
+OBJECTS       = adminlogin.o \
+		adminmaintence.o \
+		americanteamssortedbyteamname.o \
+		customtripwindow.o \
+		dateopenedsorted.o \
+		displaywindow.o \
+		greatestdistancecenter.o \
 		main.o \
 		mainwindow.o \
+		marlinspark.o \
 		menuselectwindow.o \
+		nationalteamsortdbystadiumname.o \
+		parktypologysorted.o \
+		rooftypesorted.o \
+		seatingcapacitysorted.o \
+		smallestdistancecenter.o \
+		summarypage.o \
+		teaminfowindow.o \
+		teamnamesortedbystadium.o \
+		teamnamesortedbyteamname.o \
+		moc_adminlogin.o \
+		moc_adminmaintence.o \
+		moc_americanteamssortedbyteamname.o \
+		moc_customtripwindow.o \
+		moc_dateopenedsorted.o \
 		moc_displaywindow.o \
+		moc_greatestdistancecenter.o \
 		moc_mainwindow.o \
-		moc_menuselectwindow.o
+		moc_marlinspark.o \
+		moc_menuselectwindow.o \
+		moc_nationalteamsortdbystadiumname.o \
+		moc_parktypologysorted.o \
+		moc_rooftypesorted.o \
+		moc_seatingcapacitysorted.o \
+		moc_smallestdistancecenter.o \
+		moc_summarypage.o \
+		moc_teaminfowindow.o \
+		moc_teamnamesortedbystadium.o \
+		moc_teamnamesortedbyteamname.o
 DIST          = /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/spec_pre.prf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/device_config.prf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/common/unix.conf \
@@ -194,6 +258,7 @@ DIST          = /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/s
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/qt_config.prf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang/qmake.conf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/spec_post.prf \
+		../Project-2/.qmake.stash \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/exclusive_builds.prf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/mac/sdk.prf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/toolchain.prf \
@@ -223,12 +288,44 @@ DIST          = /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/s
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/exceptions.prf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/yacc.prf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/lex.prf \
-		../Project-2/Project-2.pro ../Project-2/displaywindow.h \
+		../Project-2/Project-2.pro ../Project-2/adminlogin.h \
+		../Project-2/adminmaintence.h \
+		../Project-2/americanteamssortedbyteamname.h \
+		../Project-2/customtripwindow.h \
+		../Project-2/dateopenedsorted.h \
+		../Project-2/displaywindow.h \
+		../Project-2/greatestdistancecenter.h \
 		../Project-2/mainwindow.h \
-		../Project-2/menuselectwindow.h ../Project-2/displaywindow.cpp \
+		../Project-2/marlinspark.h \
+		../Project-2/menuselectwindow.h \
+		../Project-2/nationalteamsortdbystadiumname.h \
+		../Project-2/parktypologysorted.h \
+		../Project-2/rooftypesorted.h \
+		../Project-2/seatingcapacitysorted.h \
+		../Project-2/smallestdistancecenter.h \
+		../Project-2/summarypage.h \
+		../Project-2/teaminfowindow.h \
+		../Project-2/teamnamesortedbystadium.h \
+		../Project-2/teamnamesortedbyteamname.h ../Project-2/adminlogin.cpp \
+		../Project-2/adminmaintence.cpp \
+		../Project-2/americanteamssortedbyteamname.cpp \
+		../Project-2/customtripwindow.cpp \
+		../Project-2/dateopenedsorted.cpp \
+		../Project-2/displaywindow.cpp \
+		../Project-2/greatestdistancecenter.cpp \
 		../Project-2/main.cpp \
 		../Project-2/mainwindow.cpp \
-		../Project-2/menuselectwindow.cpp
+		../Project-2/marlinspark.cpp \
+		../Project-2/menuselectwindow.cpp \
+		../Project-2/nationalteamsortdbystadiumname.cpp \
+		../Project-2/parktypologysorted.cpp \
+		../Project-2/rooftypesorted.cpp \
+		../Project-2/seatingcapacitysorted.cpp \
+		../Project-2/smallestdistancecenter.cpp \
+		../Project-2/summarypage.cpp \
+		../Project-2/teaminfowindow.cpp \
+		../Project-2/teamnamesortedbystadium.cpp \
+		../Project-2/teamnamesortedbyteamname.cpp
 QMAKE_TARGET  = Project-2
 DESTDIR       = 
 TARGET        = Project-2.app/Contents/MacOS/Project-2
@@ -237,19 +334,19 @@ TARGET        = Project-2.app/Contents/MacOS/Project-2
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 12.1
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
-EXPORT__QMAKE_STASH_ = 
+EXPORT__QMAKE_STASH_ = /Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/build-Project-2-Qt_6_6_0_for_macOS-Debug/.qmake.stash
 EXPORT_VALID_ARCHS = x86_64 arm64
 EXPORT_DEFAULT_ARCHS = x86_64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
 EXPORT_ARCH_ARGS = $(foreach arch, $(if $(EXPORT_ARCHS), $(EXPORT_ARCHS), $(EXPORT_VALID_ARCHS)), -arch $(arch))
-EXPORT__PRO_FILE_ = /Users/allentarasyuk/Desktop/Baseball/CS1D-project-2/Project/Project-2/Project-2.pro
+EXPORT__PRO_FILE_ = /Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2/Project-2.pro
 
 
 include /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-Project-2.app/Contents/MacOS/Project-2: ui_displaywindow.h ui_mainwindow.h ui_menuselectwindow.h $(OBJECTS)  
+Project-2.app/Contents/MacOS/Project-2: ui_adminlogin.h ui_adminmaintence.h ui_americanteamssortedbyteamname.h ui_customtripwindow.h ui_dateopenedsorted.h ui_displaywindow.h ui_greatestdistancecenter.h ui_mainwindow.h ui_marlinspark.h ui_menuselectwindow.h ui_nationalteamsortdbystadiumname.h ui_parktypologysorted.h ui_rooftypesorted.h ui_seatingcapacitysorted.h ui_smallestdistancecenter.h ui_summarypage.h ui_teaminfowindow.h ui_teamnamesortedbystadium.h ui_teamnamesortedbyteamname.h $(OBJECTS)  
 	@test -d Project-2.app/Contents/MacOS/ || mkdir -p Project-2.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET)  $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -382,6 +479,7 @@ Makefile: ../Project-2/Project-2.pro /Users/allentarasyuk/Documents/QT/6.6.0/mac
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/qt_config.prf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang/qmake.conf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/exclusive_builds.prf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/mac/sdk.prf \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/toolchain.prf \
@@ -414,6 +512,7 @@ Makefile: ../Project-2/Project-2.pro /Users/allentarasyuk/Documents/QT/6.6.0/mac
 		../Project-2/Project-2.pro \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Resources/QtGui.prl \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Resources/QtSql.prl \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Resources/QtCore.prl
 	$(QMAKE) -o Makefile ../Project-2/Project-2.pro -spec macx-clang CONFIG+=debug CONFIG+=qml_debug
 /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/spec_pre.prf:
@@ -545,6 +644,7 @@ Makefile: ../Project-2/Project-2.pro /Users/allentarasyuk/Documents/QT/6.6.0/mac
 /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/qt_config.prf:
 /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang/qmake.conf:
 /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/exclusive_builds.prf:
 /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/mac/sdk.prf:
 /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/toolchain.prf:
@@ -577,6 +677,7 @@ Makefile: ../Project-2/Project-2.pro /Users/allentarasyuk/Documents/QT/6.6.0/mac
 ../Project-2/Project-2.pro:
 /Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl:
 /Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Resources/QtGui.prl:
+/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Resources/QtSql.prl:
 /Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Resources/QtCore.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../Project-2/Project-2.pro -spec macx-clang CONFIG+=debug CONFIG+=qml_debug
@@ -607,9 +708,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project-2/displaywindow.h ../Project-2/mainwindow.h ../Project-2/menuselectwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project-2/displaywindow.cpp ../Project-2/main.cpp ../Project-2/mainwindow.cpp ../Project-2/menuselectwindow.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project-2/displaywindow.ui ../Project-2/mainwindow.ui ../Project-2/menuselectwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project-2/adminlogin.h ../Project-2/adminmaintence.h ../Project-2/americanteamssortedbyteamname.h ../Project-2/customtripwindow.h ../Project-2/dateopenedsorted.h ../Project-2/displaywindow.h ../Project-2/greatestdistancecenter.h ../Project-2/mainwindow.h ../Project-2/marlinspark.h ../Project-2/menuselectwindow.h ../Project-2/nationalteamsortdbystadiumname.h ../Project-2/parktypologysorted.h ../Project-2/rooftypesorted.h ../Project-2/seatingcapacitysorted.h ../Project-2/smallestdistancecenter.h ../Project-2/summarypage.h ../Project-2/teaminfowindow.h ../Project-2/teamnamesortedbystadium.h ../Project-2/teamnamesortedbyteamname.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project-2/adminlogin.cpp ../Project-2/adminmaintence.cpp ../Project-2/americanteamssortedbyteamname.cpp ../Project-2/customtripwindow.cpp ../Project-2/dateopenedsorted.cpp ../Project-2/displaywindow.cpp ../Project-2/greatestdistancecenter.cpp ../Project-2/main.cpp ../Project-2/mainwindow.cpp ../Project-2/marlinspark.cpp ../Project-2/menuselectwindow.cpp ../Project-2/nationalteamsortdbystadiumname.cpp ../Project-2/parktypologysorted.cpp ../Project-2/rooftypesorted.cpp ../Project-2/seatingcapacitysorted.cpp ../Project-2/smallestdistancecenter.cpp ../Project-2/summarypage.cpp ../Project-2/teaminfowindow.cpp ../Project-2/teamnamesortedbystadium.cpp ../Project-2/teamnamesortedbyteamname.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project-2/adminlogin.ui ../Project-2/adminmaintence.ui ../Project-2/americanteamssortedbyteamname.ui ../Project-2/customtripwindow.ui ../Project-2/dateopenedsorted.ui ../Project-2/displaywindow.ui ../Project-2/greatestdistancecenter.ui ../Project-2/mainwindow.ui ../Project-2/marlinspark.ui ../Project-2/menuselectwindow.ui ../Project-2/nationalteamsortdbystadiumname.ui ../Project-2/parktypologysorted.ui ../Project-2/rooftypesorted.ui ../Project-2/seatingcapacitysorted.ui ../Project-2/smallestdistancecenter.ui ../Project-2/summarypage.ui ../Project-2/teaminfowindow.ui ../Project-2/teamnamesortedbystadium.ui ../Project-2/teamnamesortedbyteamname.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -619,6 +720,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r Project-2.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -637,46 +739,578 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_displaywindow.cpp moc_mainwindow.cpp moc_menuselectwindow.cpp
+compiler_moc_header_make_all: moc_adminlogin.cpp moc_adminmaintence.cpp moc_americanteamssortedbyteamname.cpp moc_customtripwindow.cpp moc_dateopenedsorted.cpp moc_displaywindow.cpp moc_greatestdistancecenter.cpp moc_mainwindow.cpp moc_marlinspark.cpp moc_menuselectwindow.cpp moc_nationalteamsortdbystadiumname.cpp moc_parktypologysorted.cpp moc_rooftypesorted.cpp moc_seatingcapacitysorted.cpp moc_smallestdistancecenter.cpp moc_summarypage.cpp moc_teaminfowindow.cpp moc_teamnamesortedbystadium.cpp moc_teamnamesortedbyteamname.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_displaywindow.cpp moc_mainwindow.cpp moc_menuselectwindow.cpp
+	-$(DEL_FILE) moc_adminlogin.cpp moc_adminmaintence.cpp moc_americanteamssortedbyteamname.cpp moc_customtripwindow.cpp moc_dateopenedsorted.cpp moc_displaywindow.cpp moc_greatestdistancecenter.cpp moc_mainwindow.cpp moc_marlinspark.cpp moc_menuselectwindow.cpp moc_nationalteamsortdbystadiumname.cpp moc_parktypologysorted.cpp moc_rooftypesorted.cpp moc_seatingcapacitysorted.cpp moc_smallestdistancecenter.cpp moc_summarypage.cpp moc_teaminfowindow.cpp moc_teamnamesortedbystadium.cpp moc_teamnamesortedbyteamname.cpp
+moc_adminlogin.cpp: ../Project-2/adminlogin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Project-2/adminmaintence.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFile \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfile.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QTextStream \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qtextstream.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMessageBox \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/adminlogin.h -o moc_adminlogin.cpp
+
+moc_adminmaintence.cpp: ../Project-2/adminmaintence.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFile \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfile.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QTextStream \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qtextstream.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMessageBox \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/adminmaintence.h -o moc_adminmaintence.cpp
+
+moc_americanteamssortedbyteamname.cpp: ../Project-2/americanteamssortedbyteamname.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/americanteamssortedbyteamname.h -o moc_americanteamssortedbyteamname.cpp
+
+moc_customtripwindow.cpp: ../Project-2/customtripwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/customtripwindow.h -o moc_customtripwindow.cpp
+
+moc_dateopenedsorted.cpp: ../Project-2/dateopenedsorted.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/dateopenedsorted.h -o moc_dateopenedsorted.cpp
+
 moc_displaywindow.cpp: ../Project-2/displaywindow.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Project-2/teaminfowindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		../Project-2/teamnamesortedbyteamname.h \
+		../Project-2/teamnamesortedbystadium.h \
+		../Project-2/americanteamssortedbyteamname.h \
+		../Project-2/nationalteamsortdbystadiumname.h \
+		../Project-2/parktypologysorted.h \
+		../Project-2/rooftypesorted.h \
+		../Project-2/dateopenedsorted.h \
+		../Project-2/seatingcapacitysorted.h \
+		../Project-2/greatestdistancecenter.h \
+		../Project-2/smallestdistancecenter.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
-	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I/Users/allentarasyuk/Desktop/Baseball/CS1D-project-2/Project/Project-2 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/displaywindow.h -o moc_displaywindow.cpp
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/displaywindow.h -o moc_displaywindow.cpp
+
+moc_greatestdistancecenter.cpp: ../Project-2/greatestdistancecenter.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/greatestdistancecenter.h -o moc_greatestdistancecenter.cpp
 
 moc_mainwindow.cpp: ../Project-2/mainwindow.h \
 		../Project-2/menuselectwindow.h \
+		../Project-2/customtripwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Project-2/displaywindow.h \
+		../Project-2/teaminfowindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		../Project-2/teamnamesortedbyteamname.h \
+		../Project-2/teamnamesortedbystadium.h \
+		../Project-2/americanteamssortedbyteamname.h \
+		../Project-2/nationalteamsortdbystadiumname.h \
+		../Project-2/parktypologysorted.h \
+		../Project-2/rooftypesorted.h \
+		../Project-2/dateopenedsorted.h \
+		../Project-2/seatingcapacitysorted.h \
+		../Project-2/greatestdistancecenter.h \
+		../Project-2/smallestdistancecenter.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/mainwindow.h -o moc_mainwindow.cpp
+
+moc_marlinspark.cpp: ../Project-2/marlinspark.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
-	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I/Users/allentarasyuk/Desktop/Baseball/CS1D-project-2/Project/Project-2 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/mainwindow.h -o moc_mainwindow.cpp
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/marlinspark.h -o moc_marlinspark.cpp
 
 moc_menuselectwindow.cpp: ../Project-2/menuselectwindow.h \
+		../Project-2/customtripwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Project-2/displaywindow.h \
+		../Project-2/teaminfowindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		../Project-2/teamnamesortedbyteamname.h \
+		../Project-2/teamnamesortedbystadium.h \
+		../Project-2/americanteamssortedbyteamname.h \
+		../Project-2/nationalteamsortdbystadiumname.h \
+		../Project-2/parktypologysorted.h \
+		../Project-2/rooftypesorted.h \
+		../Project-2/dateopenedsorted.h \
+		../Project-2/seatingcapacitysorted.h \
+		../Project-2/greatestdistancecenter.h \
+		../Project-2/smallestdistancecenter.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/menuselectwindow.h -o moc_menuselectwindow.cpp
+
+moc_nationalteamsortdbystadiumname.cpp: ../Project-2/nationalteamsortdbystadiumname.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/nationalteamsortdbystadiumname.h -o moc_nationalteamsortdbystadiumname.cpp
+
+moc_parktypologysorted.cpp: ../Project-2/parktypologysorted.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/parktypologysorted.h -o moc_parktypologysorted.cpp
+
+moc_rooftypesorted.cpp: ../Project-2/rooftypesorted.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/rooftypesorted.h -o moc_rooftypesorted.cpp
+
+moc_seatingcapacitysorted.cpp: ../Project-2/seatingcapacitysorted.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/seatingcapacitysorted.h -o moc_seatingcapacitysorted.cpp
+
+moc_smallestdistancecenter.cpp: ../Project-2/smallestdistancecenter.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/smallestdistancecenter.h -o moc_smallestdistancecenter.cpp
+
+moc_summarypage.cpp: ../Project-2/summarypage.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
-	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I/Users/allentarasyuk/Desktop/Baseball/CS1D-project-2/Project/Project-2 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/menuselectwindow.h -o moc_menuselectwindow.cpp
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/summarypage.h -o moc_summarypage.cpp
+
+moc_teaminfowindow.cpp: ../Project-2/teaminfowindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/teaminfowindow.h -o moc_teaminfowindow.cpp
+
+moc_teamnamesortedbystadium.cpp: ../Project-2/teamnamesortedbystadium.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/teamnamesortedbystadium.h -o moc_teamnamesortedbystadium.cpp
+
+moc_teamnamesortedbyteamname.cpp: ../Project-2/teamnamesortedbyteamname.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/teamnamesortedbyteamname.h -o moc_teamnamesortedbyteamname.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_displaywindow.h ui_mainwindow.h ui_menuselectwindow.h
+compiler_uic_make_all: ui_adminlogin.h ui_adminmaintence.h ui_americanteamssortedbyteamname.h ui_customtripwindow.h ui_dateopenedsorted.h ui_displaywindow.h ui_greatestdistancecenter.h ui_mainwindow.h ui_marlinspark.h ui_menuselectwindow.h ui_nationalteamsortdbystadiumname.h ui_parktypologysorted.h ui_rooftypesorted.h ui_seatingcapacitysorted.h ui_smallestdistancecenter.h ui_summarypage.h ui_teaminfowindow.h ui_teamnamesortedbystadium.h ui_teamnamesortedbyteamname.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_displaywindow.h ui_mainwindow.h ui_menuselectwindow.h
+	-$(DEL_FILE) ui_adminlogin.h ui_adminmaintence.h ui_americanteamssortedbyteamname.h ui_customtripwindow.h ui_dateopenedsorted.h ui_displaywindow.h ui_greatestdistancecenter.h ui_mainwindow.h ui_marlinspark.h ui_menuselectwindow.h ui_nationalteamsortdbystadiumname.h ui_parktypologysorted.h ui_rooftypesorted.h ui_seatingcapacitysorted.h ui_smallestdistancecenter.h ui_summarypage.h ui_teaminfowindow.h ui_teamnamesortedbystadium.h ui_teamnamesortedbyteamname.h
+ui_adminlogin.h: ../Project-2/adminlogin.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/adminlogin.ui -o ui_adminlogin.h
+
+ui_adminmaintence.h: ../Project-2/adminmaintence.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/adminmaintence.ui -o ui_adminmaintence.h
+
+ui_americanteamssortedbyteamname.h: ../Project-2/americanteamssortedbyteamname.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/americanteamssortedbyteamname.ui -o ui_americanteamssortedbyteamname.h
+
+ui_customtripwindow.h: ../Project-2/customtripwindow.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/customtripwindow.ui -o ui_customtripwindow.h
+
+ui_dateopenedsorted.h: ../Project-2/dateopenedsorted.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/dateopenedsorted.ui -o ui_dateopenedsorted.h
+
 ui_displaywindow.h: ../Project-2/displaywindow.ui \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
 	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/displaywindow.ui -o ui_displaywindow.h
+
+ui_greatestdistancecenter.h: ../Project-2/greatestdistancecenter.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/greatestdistancecenter.ui -o ui_greatestdistancecenter.h
 
 ui_mainwindow.h: ../Project-2/mainwindow.ui \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
 	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/mainwindow.ui -o ui_mainwindow.h
 
+ui_marlinspark.h: ../Project-2/marlinspark.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/marlinspark.ui -o ui_marlinspark.h
+
 ui_menuselectwindow.h: ../Project-2/menuselectwindow.ui \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
 	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/menuselectwindow.ui -o ui_menuselectwindow.h
+
+ui_nationalteamsortdbystadiumname.h: ../Project-2/nationalteamsortdbystadiumname.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/nationalteamsortdbystadiumname.ui -o ui_nationalteamsortdbystadiumname.h
+
+ui_parktypologysorted.h: ../Project-2/parktypologysorted.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/parktypologysorted.ui -o ui_parktypologysorted.h
+
+ui_rooftypesorted.h: ../Project-2/rooftypesorted.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/rooftypesorted.ui -o ui_rooftypesorted.h
+
+ui_seatingcapacitysorted.h: ../Project-2/seatingcapacitysorted.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/seatingcapacitysorted.ui -o ui_seatingcapacitysorted.h
+
+ui_smallestdistancecenter.h: ../Project-2/smallestdistancecenter.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/smallestdistancecenter.ui -o ui_smallestdistancecenter.h
+
+ui_summarypage.h: ../Project-2/summarypage.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/summarypage.ui -o ui_summarypage.h
+
+ui_teaminfowindow.h: ../Project-2/teaminfowindow.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/teaminfowindow.ui -o ui_teaminfowindow.h
+
+ui_teamnamesortedbystadium.h: ../Project-2/teamnamesortedbystadium.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/teamnamesortedbystadium.ui -o ui_teamnamesortedbystadium.h
+
+ui_teamnamesortedbyteamname.h: ../Project-2/teamnamesortedbyteamname.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/teamnamesortedbyteamname.ui -o ui_teamnamesortedbyteamname.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -690,41 +1324,601 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 
 ####### Compile
 
+adminlogin.o: ../Project-2/adminlogin.cpp ../Project-2/adminlogin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Project-2/adminmaintence.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFile \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfile.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QTextStream \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qtextstream.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMessageBox \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		ui_adminlogin.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o adminlogin.o ../Project-2/adminlogin.cpp
+
+adminmaintence.o: ../Project-2/adminmaintence.cpp ../Project-2/adminmaintence.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFile \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfile.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QTextStream \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qtextstream.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMessageBox \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		ui_adminmaintence.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o adminmaintence.o ../Project-2/adminmaintence.cpp
+
+americanteamssortedbyteamname.o: ../Project-2/americanteamssortedbyteamname.cpp ../Project-2/americanteamssortedbyteamname.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		ui_americanteamssortedbyteamname.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o americanteamssortedbyteamname.o ../Project-2/americanteamssortedbyteamname.cpp
+
+customtripwindow.o: ../Project-2/customtripwindow.cpp ../Project-2/customtripwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		ui_customtripwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o customtripwindow.o ../Project-2/customtripwindow.cpp
+
+dateopenedsorted.o: ../Project-2/dateopenedsorted.cpp ../Project-2/dateopenedsorted.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		ui_dateopenedsorted.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dateopenedsorted.o ../Project-2/dateopenedsorted.cpp
+
 displaywindow.o: ../Project-2/displaywindow.cpp ../Project-2/displaywindow.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Project-2/teaminfowindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		../Project-2/teamnamesortedbyteamname.h \
+		../Project-2/teamnamesortedbystadium.h \
+		../Project-2/americanteamssortedbyteamname.h \
+		../Project-2/nationalteamsortdbystadiumname.h \
+		../Project-2/parktypologysorted.h \
+		../Project-2/rooftypesorted.h \
+		../Project-2/dateopenedsorted.h \
+		../Project-2/seatingcapacitysorted.h \
+		../Project-2/greatestdistancecenter.h \
+		../Project-2/smallestdistancecenter.h \
 		ui_displaywindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o displaywindow.o ../Project-2/displaywindow.cpp
 
-main.o: ../Project-2/main.cpp ../Project-2/mainwindow.h \
-		../Project-2/menuselectwindow.h \
+greatestdistancecenter.o: ../Project-2/greatestdistancecenter.cpp ../Project-2/greatestdistancecenter.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		ui_greatestdistancecenter.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o greatestdistancecenter.o ../Project-2/greatestdistancecenter.cpp
+
+main.o: ../Project-2/main.cpp ../Project-2/mainwindow.h \
+		../Project-2/menuselectwindow.h \
+		../Project-2/customtripwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Project-2/displaywindow.h \
+		../Project-2/teaminfowindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		../Project-2/teamnamesortedbyteamname.h \
+		../Project-2/teamnamesortedbystadium.h \
+		../Project-2/americanteamssortedbyteamname.h \
+		../Project-2/nationalteamsortdbystadiumname.h \
+		../Project-2/parktypologysorted.h \
+		../Project-2/rooftypesorted.h \
+		../Project-2/dateopenedsorted.h \
+		../Project-2/seatingcapacitysorted.h \
+		../Project-2/greatestdistancecenter.h \
+		../Project-2/smallestdistancecenter.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QApplication \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Project-2/main.cpp
 
 mainwindow.o: ../Project-2/mainwindow.cpp ../Project-2/mainwindow.h \
 		../Project-2/menuselectwindow.h \
+		../Project-2/customtripwindow.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_mainwindow.h
+		../Project-2/displaywindow.h \
+		../Project-2/teaminfowindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		../Project-2/teamnamesortedbyteamname.h \
+		../Project-2/teamnamesortedbystadium.h \
+		../Project-2/americanteamssortedbyteamname.h \
+		../Project-2/nationalteamsortdbystadiumname.h \
+		../Project-2/parktypologysorted.h \
+		../Project-2/rooftypesorted.h \
+		../Project-2/dateopenedsorted.h \
+		../Project-2/seatingcapacitysorted.h \
+		../Project-2/greatestdistancecenter.h \
+		../Project-2/smallestdistancecenter.h \
+		ui_mainwindow.h \
+		ui_adminlogin.h \
+		../Project-2/adminlogin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Project-2/adminmaintence.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFile \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfile.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QTextStream \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qtextstream.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMessageBox \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Project-2/mainwindow.cpp
 
-menuselectwindow.o: ../Project-2/menuselectwindow.cpp ../Project-2/menuselectwindow.h \
+marlinspark.o: ../Project-2/marlinspark.cpp ../Project-2/marlinspark.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		ui_marlinspark.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o marlinspark.o ../Project-2/marlinspark.cpp
+
+menuselectwindow.o: ../Project-2/menuselectwindow.cpp ../Project-2/menuselectwindow.h \
+		../Project-2/customtripwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Project-2/displaywindow.h \
+		../Project-2/teaminfowindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		../Project-2/teamnamesortedbyteamname.h \
+		../Project-2/teamnamesortedbystadium.h \
+		../Project-2/americanteamssortedbyteamname.h \
+		../Project-2/nationalteamsortdbystadiumname.h \
+		../Project-2/parktypologysorted.h \
+		../Project-2/rooftypesorted.h \
+		../Project-2/dateopenedsorted.h \
+		../Project-2/seatingcapacitysorted.h \
+		../Project-2/greatestdistancecenter.h \
+		../Project-2/smallestdistancecenter.h \
 		ui_menuselectwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o menuselectwindow.o ../Project-2/menuselectwindow.cpp
+
+nationalteamsortdbystadiumname.o: ../Project-2/nationalteamsortdbystadiumname.cpp ../Project-2/nationalteamsortdbystadiumname.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		ui_nationalteamsortdbystadiumname.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o nationalteamsortdbystadiumname.o ../Project-2/nationalteamsortdbystadiumname.cpp
+
+parktypologysorted.o: ../Project-2/parktypologysorted.cpp ../Project-2/parktypologysorted.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		ui_parktypologysorted.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o parktypologysorted.o ../Project-2/parktypologysorted.cpp
+
+rooftypesorted.o: ../Project-2/rooftypesorted.cpp ../Project-2/rooftypesorted.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		ui_rooftypesorted.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rooftypesorted.o ../Project-2/rooftypesorted.cpp
+
+seatingcapacitysorted.o: ../Project-2/seatingcapacitysorted.cpp ../Project-2/seatingcapacitysorted.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		ui_seatingcapacitysorted.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o seatingcapacitysorted.o ../Project-2/seatingcapacitysorted.cpp
+
+smallestdistancecenter.o: ../Project-2/smallestdistancecenter.cpp ../Project-2/smallestdistancecenter.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		ui_smallestdistancecenter.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o smallestdistancecenter.o ../Project-2/smallestdistancecenter.cpp
+
+summarypage.o: ../Project-2/summarypage.cpp ../Project-2/summarypage.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		ui_summarypage.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o summarypage.o ../Project-2/summarypage.cpp
+
+teaminfowindow.o: ../Project-2/teaminfowindow.cpp ../Project-2/teaminfowindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		ui_teaminfowindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o teaminfowindow.o ../Project-2/teaminfowindow.cpp
+
+teamnamesortedbystadium.o: ../Project-2/teamnamesortedbystadium.cpp ../Project-2/teamnamesortedbystadium.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		ui_teamnamesortedbystadium.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o teamnamesortedbystadium.o ../Project-2/teamnamesortedbystadium.cpp
+
+teamnamesortedbyteamname.o: ../Project-2/teamnamesortedbyteamname.cpp ../Project-2/teamnamesortedbyteamname.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/QtSql \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QtDebug \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFileInfo \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		ui_teamnamesortedbyteamname.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o teamnamesortedbyteamname.o ../Project-2/teamnamesortedbyteamname.cpp
+
+moc_adminlogin.o: moc_adminlogin.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_adminlogin.o moc_adminlogin.cpp
+
+moc_adminmaintence.o: moc_adminmaintence.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_adminmaintence.o moc_adminmaintence.cpp
+
+moc_americanteamssortedbyteamname.o: moc_americanteamssortedbyteamname.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_americanteamssortedbyteamname.o moc_americanteamssortedbyteamname.cpp
+
+moc_customtripwindow.o: moc_customtripwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_customtripwindow.o moc_customtripwindow.cpp
+
+moc_dateopenedsorted.o: moc_dateopenedsorted.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_dateopenedsorted.o moc_dateopenedsorted.cpp
 
 moc_displaywindow.o: moc_displaywindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_displaywindow.o moc_displaywindow.cpp
 
+moc_greatestdistancecenter.o: moc_greatestdistancecenter.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_greatestdistancecenter.o moc_greatestdistancecenter.cpp
+
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
+moc_marlinspark.o: moc_marlinspark.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_marlinspark.o moc_marlinspark.cpp
+
 moc_menuselectwindow.o: moc_menuselectwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_menuselectwindow.o moc_menuselectwindow.cpp
+
+moc_nationalteamsortdbystadiumname.o: moc_nationalteamsortdbystadiumname.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_nationalteamsortdbystadiumname.o moc_nationalteamsortdbystadiumname.cpp
+
+moc_parktypologysorted.o: moc_parktypologysorted.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_parktypologysorted.o moc_parktypologysorted.cpp
+
+moc_rooftypesorted.o: moc_rooftypesorted.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_rooftypesorted.o moc_rooftypesorted.cpp
+
+moc_seatingcapacitysorted.o: moc_seatingcapacitysorted.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_seatingcapacitysorted.o moc_seatingcapacitysorted.cpp
+
+moc_smallestdistancecenter.o: moc_smallestdistancecenter.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_smallestdistancecenter.o moc_smallestdistancecenter.cpp
+
+moc_summarypage.o: moc_summarypage.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_summarypage.o moc_summarypage.cpp
+
+moc_teaminfowindow.o: moc_teaminfowindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_teaminfowindow.o moc_teaminfowindow.cpp
+
+moc_teamnamesortedbystadium.o: moc_teamnamesortedbystadium.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_teamnamesortedbystadium.o moc_teamnamesortedbystadium.cpp
+
+moc_teamnamesortedbyteamname.o: moc_teamnamesortedbyteamname.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_teamnamesortedbyteamname.o moc_teamnamesortedbyteamname.cpp
 
 ####### Install
 
