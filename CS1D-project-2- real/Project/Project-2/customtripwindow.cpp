@@ -19,3 +19,11 @@ void CustomTripWindow::on_visitAllBtn_clicked()
     visitAll->show();
 }
 
+
+void CustomTripWindow::on_customTripBtn_clicked()
+{
+    customInput = new custominput;
+    customInput->show();
+
+}
+

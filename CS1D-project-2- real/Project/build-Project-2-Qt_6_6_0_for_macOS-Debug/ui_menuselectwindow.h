@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -28,6 +29,7 @@ public:
     QPushButton *customButton;
     QPushButton *backButton;
     QLabel *label;
+    QFrame *line;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -61,6 +63,11 @@ public:
         font1.setBold(true);
         label->setFont(font1);
         label->setAlignment(Qt::AlignCenter);
+        line = new QFrame(centralwidget);
+        line->setObjectName("line");
+        line->setGeometry(QRect(270, 150, 271, 20));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
         MenuSelectWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MenuSelectWindow);
         menubar->setObjectName("menubar");

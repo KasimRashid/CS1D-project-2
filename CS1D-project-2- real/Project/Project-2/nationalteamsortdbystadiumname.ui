@@ -17,11 +17,17 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>30</y>
-      <width>491</width>
+      <x>110</x>
+      <y>20</y>
+      <width>611</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>National League Teams and Their Stadiums Sorted by Stadium Name</string>
@@ -31,10 +37,28 @@
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>60</y>
+      <y>70</y>
       <width>351</width>
       <height>471</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <bold>true</bold>
+     </font>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>521</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>
@@ -44,7 +68,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

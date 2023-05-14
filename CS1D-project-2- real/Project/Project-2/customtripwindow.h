@@ -1,6 +1,7 @@
 #ifndef CUSTOMTRIPWINDOW_H
 #define CUSTOMTRIPWINDOW_H
 
+#include "custominput.h"
 #include "marlinspark.h"
 #include <QMainWindow>
 
@@ -19,10 +20,13 @@ public:
 private slots:
     void on_visitAllBtn_clicked();
 
+    void on_customTripBtn_clicked();
+
 private:
     Ui::CustomTripWindow *ui;
 
     MarlinsPark *visitAll;
+    custominput *customInput;
 };
 
 #endif // CUSTOMTRIPWINDOW_H

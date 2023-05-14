@@ -28,10 +28,10 @@ public:
         db = QSqlDatabase::addDatabase("QSQLITE");
 
         //Adam's db file path
-        QString path = "/Users/adamortiz/Desktop/CS1D-Project2-Git/CS1D-project-2/Baseball.db";
+         QString path = "/Users/adamortiz/Desktop/CS1D-Project2-Git/CS1D-project-2/Baseball.db";
 
         // Allen's db file path
-        //QString path = "/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/Baseball.db";
+        // QString path = "/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/Baseball.db";
 
         qInfo() << path;
         db.setDatabaseName(path);

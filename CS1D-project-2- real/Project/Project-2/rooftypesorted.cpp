@@ -8,7 +8,7 @@ roofTypeSorted::roofTypeSorted(QWidget *parent) :
     ui->setupUi(this);
 
     //Change the style of the label at the top of the text browser
-    ui->label->setStyleSheet("font : 16pt Times New Roman");
+   // ui->label->setStyleSheet("font : 16pt Times New Roman");
 
     this->setWindowTitle("Teams With Open Roof Types Sorted");
     QString data = "";

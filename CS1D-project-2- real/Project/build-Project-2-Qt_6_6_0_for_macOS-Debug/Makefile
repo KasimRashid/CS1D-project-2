@@ -55,6 +55,7 @@ OBJECTS_DIR   = ./
 SOURCES       = ../Project-2/adminlogin.cpp \
 		../Project-2/adminmaintence.cpp \
 		../Project-2/americanteamssortedbyteamname.cpp \
+		../Project-2/custominput.cpp \
 		../Project-2/customtripwindow.cpp \
 		../Project-2/dateopenedsorted.cpp \
 		../Project-2/displaywindow.cpp \
@@ -71,9 +72,11 @@ SOURCES       = ../Project-2/adminlogin.cpp \
 		../Project-2/summarypage.cpp \
 		../Project-2/teaminfowindow.cpp \
 		../Project-2/teamnamesortedbystadium.cpp \
-		../Project-2/teamnamesortedbyteamname.cpp moc_adminlogin.cpp \
+		../Project-2/teamnamesortedbyteamname.cpp \
+		../Project-2/travelplan.cpp moc_adminlogin.cpp \
 		moc_adminmaintence.cpp \
 		moc_americanteamssortedbyteamname.cpp \
+		moc_custominput.cpp \
 		moc_customtripwindow.cpp \
 		moc_dateopenedsorted.cpp \
 		moc_displaywindow.cpp \
@@ -93,6 +96,7 @@ SOURCES       = ../Project-2/adminlogin.cpp \
 OBJECTS       = adminlogin.o \
 		adminmaintence.o \
 		americanteamssortedbyteamname.o \
+		custominput.o \
 		customtripwindow.o \
 		dateopenedsorted.o \
 		displaywindow.o \
@@ -110,9 +114,11 @@ OBJECTS       = adminlogin.o \
 		teaminfowindow.o \
 		teamnamesortedbystadium.o \
 		teamnamesortedbyteamname.o \
+		travelplan.o \
 		moc_adminlogin.o \
 		moc_adminmaintence.o \
 		moc_americanteamssortedbyteamname.o \
+		moc_custominput.o \
 		moc_customtripwindow.o \
 		moc_dateopenedsorted.o \
 		moc_displaywindow.o \
@@ -291,6 +297,7 @@ DIST          = /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/s
 		../Project-2/Project-2.pro ../Project-2/adminlogin.h \
 		../Project-2/adminmaintence.h \
 		../Project-2/americanteamssortedbyteamname.h \
+		../Project-2/custominput.h \
 		../Project-2/customtripwindow.h \
 		../Project-2/dateopenedsorted.h \
 		../Project-2/displaywindow.h \
@@ -306,9 +313,11 @@ DIST          = /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/s
 		../Project-2/summarypage.h \
 		../Project-2/teaminfowindow.h \
 		../Project-2/teamnamesortedbystadium.h \
-		../Project-2/teamnamesortedbyteamname.h ../Project-2/adminlogin.cpp \
+		../Project-2/teamnamesortedbyteamname.h \
+		../Project-2/travelplan.h ../Project-2/adminlogin.cpp \
 		../Project-2/adminmaintence.cpp \
 		../Project-2/americanteamssortedbyteamname.cpp \
+		../Project-2/custominput.cpp \
 		../Project-2/customtripwindow.cpp \
 		../Project-2/dateopenedsorted.cpp \
 		../Project-2/displaywindow.cpp \
@@ -325,7 +334,8 @@ DIST          = /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/s
 		../Project-2/summarypage.cpp \
 		../Project-2/teaminfowindow.cpp \
 		../Project-2/teamnamesortedbystadium.cpp \
-		../Project-2/teamnamesortedbyteamname.cpp
+		../Project-2/teamnamesortedbyteamname.cpp \
+		../Project-2/travelplan.cpp
 QMAKE_TARGET  = Project-2
 DESTDIR       = 
 TARGET        = Project-2.app/Contents/MacOS/Project-2
@@ -346,7 +356,7 @@ include /Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/features/mac/sdk.m
 first: all
 ####### Build rules
 
-Project-2.app/Contents/MacOS/Project-2: ui_adminlogin.h ui_adminmaintence.h ui_americanteamssortedbyteamname.h ui_customtripwindow.h ui_dateopenedsorted.h ui_displaywindow.h ui_greatestdistancecenter.h ui_mainwindow.h ui_marlinspark.h ui_menuselectwindow.h ui_nationalteamsortdbystadiumname.h ui_parktypologysorted.h ui_rooftypesorted.h ui_seatingcapacitysorted.h ui_smallestdistancecenter.h ui_summarypage.h ui_teaminfowindow.h ui_teamnamesortedbystadium.h ui_teamnamesortedbyteamname.h $(OBJECTS)  
+Project-2.app/Contents/MacOS/Project-2: ui_adminlogin.h ui_adminmaintence.h ui_americanteamssortedbyteamname.h ui_custominput.h ui_customtripwindow.h ui_dateopenedsorted.h ui_displaywindow.h ui_greatestdistancecenter.h ui_mainwindow.h ui_marlinspark.h ui_menuselectwindow.h ui_nationalteamsortdbystadiumname.h ui_parktypologysorted.h ui_rooftypesorted.h ui_seatingcapacitysorted.h ui_smallestdistancecenter.h ui_summarypage.h ui_teaminfowindow.h ui_teamnamesortedbystadium.h ui_teamnamesortedbyteamname.h $(OBJECTS)  
 	@test -d Project-2.app/Contents/MacOS/ || mkdir -p Project-2.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET)  $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -708,9 +718,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project-2/adminlogin.h ../Project-2/adminmaintence.h ../Project-2/americanteamssortedbyteamname.h ../Project-2/customtripwindow.h ../Project-2/dateopenedsorted.h ../Project-2/displaywindow.h ../Project-2/greatestdistancecenter.h ../Project-2/mainwindow.h ../Project-2/marlinspark.h ../Project-2/menuselectwindow.h ../Project-2/nationalteamsortdbystadiumname.h ../Project-2/parktypologysorted.h ../Project-2/rooftypesorted.h ../Project-2/seatingcapacitysorted.h ../Project-2/smallestdistancecenter.h ../Project-2/summarypage.h ../Project-2/teaminfowindow.h ../Project-2/teamnamesortedbystadium.h ../Project-2/teamnamesortedbyteamname.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project-2/adminlogin.cpp ../Project-2/adminmaintence.cpp ../Project-2/americanteamssortedbyteamname.cpp ../Project-2/customtripwindow.cpp ../Project-2/dateopenedsorted.cpp ../Project-2/displaywindow.cpp ../Project-2/greatestdistancecenter.cpp ../Project-2/main.cpp ../Project-2/mainwindow.cpp ../Project-2/marlinspark.cpp ../Project-2/menuselectwindow.cpp ../Project-2/nationalteamsortdbystadiumname.cpp ../Project-2/parktypologysorted.cpp ../Project-2/rooftypesorted.cpp ../Project-2/seatingcapacitysorted.cpp ../Project-2/smallestdistancecenter.cpp ../Project-2/summarypage.cpp ../Project-2/teaminfowindow.cpp ../Project-2/teamnamesortedbystadium.cpp ../Project-2/teamnamesortedbyteamname.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Project-2/adminlogin.ui ../Project-2/adminmaintence.ui ../Project-2/americanteamssortedbyteamname.ui ../Project-2/customtripwindow.ui ../Project-2/dateopenedsorted.ui ../Project-2/displaywindow.ui ../Project-2/greatestdistancecenter.ui ../Project-2/mainwindow.ui ../Project-2/marlinspark.ui ../Project-2/menuselectwindow.ui ../Project-2/nationalteamsortdbystadiumname.ui ../Project-2/parktypologysorted.ui ../Project-2/rooftypesorted.ui ../Project-2/seatingcapacitysorted.ui ../Project-2/smallestdistancecenter.ui ../Project-2/summarypage.ui ../Project-2/teaminfowindow.ui ../Project-2/teamnamesortedbystadium.ui ../Project-2/teamnamesortedbyteamname.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project-2/adminlogin.h ../Project-2/adminmaintence.h ../Project-2/americanteamssortedbyteamname.h ../Project-2/custominput.h ../Project-2/customtripwindow.h ../Project-2/dateopenedsorted.h ../Project-2/displaywindow.h ../Project-2/greatestdistancecenter.h ../Project-2/mainwindow.h ../Project-2/marlinspark.h ../Project-2/menuselectwindow.h ../Project-2/nationalteamsortdbystadiumname.h ../Project-2/parktypologysorted.h ../Project-2/rooftypesorted.h ../Project-2/seatingcapacitysorted.h ../Project-2/smallestdistancecenter.h ../Project-2/summarypage.h ../Project-2/teaminfowindow.h ../Project-2/teamnamesortedbystadium.h ../Project-2/teamnamesortedbyteamname.h ../Project-2/travelplan.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project-2/adminlogin.cpp ../Project-2/adminmaintence.cpp ../Project-2/americanteamssortedbyteamname.cpp ../Project-2/custominput.cpp ../Project-2/customtripwindow.cpp ../Project-2/dateopenedsorted.cpp ../Project-2/displaywindow.cpp ../Project-2/greatestdistancecenter.cpp ../Project-2/main.cpp ../Project-2/mainwindow.cpp ../Project-2/marlinspark.cpp ../Project-2/menuselectwindow.cpp ../Project-2/nationalteamsortdbystadiumname.cpp ../Project-2/parktypologysorted.cpp ../Project-2/rooftypesorted.cpp ../Project-2/seatingcapacitysorted.cpp ../Project-2/smallestdistancecenter.cpp ../Project-2/summarypage.cpp ../Project-2/teaminfowindow.cpp ../Project-2/teamnamesortedbystadium.cpp ../Project-2/teamnamesortedbyteamname.cpp ../Project-2/travelplan.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Project-2/adminlogin.ui ../Project-2/adminmaintence.ui ../Project-2/americanteamssortedbyteamname.ui ../Project-2/custominput.ui ../Project-2/customtripwindow.ui ../Project-2/dateopenedsorted.ui ../Project-2/displaywindow.ui ../Project-2/greatestdistancecenter.ui ../Project-2/mainwindow.ui ../Project-2/marlinspark.ui ../Project-2/menuselectwindow.ui ../Project-2/nationalteamsortdbystadiumname.ui ../Project-2/parktypologysorted.ui ../Project-2/rooftypesorted.ui ../Project-2/seatingcapacitysorted.ui ../Project-2/smallestdistancecenter.ui ../Project-2/summarypage.ui ../Project-2/teaminfowindow.ui ../Project-2/teamnamesortedbystadium.ui ../Project-2/teamnamesortedbyteamname.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -739,9 +749,9 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_adminlogin.cpp moc_adminmaintence.cpp moc_americanteamssortedbyteamname.cpp moc_customtripwindow.cpp moc_dateopenedsorted.cpp moc_displaywindow.cpp moc_greatestdistancecenter.cpp moc_mainwindow.cpp moc_marlinspark.cpp moc_menuselectwindow.cpp moc_nationalteamsortdbystadiumname.cpp moc_parktypologysorted.cpp moc_rooftypesorted.cpp moc_seatingcapacitysorted.cpp moc_smallestdistancecenter.cpp moc_summarypage.cpp moc_teaminfowindow.cpp moc_teamnamesortedbystadium.cpp moc_teamnamesortedbyteamname.cpp
+compiler_moc_header_make_all: moc_adminlogin.cpp moc_adminmaintence.cpp moc_americanteamssortedbyteamname.cpp moc_custominput.cpp moc_customtripwindow.cpp moc_dateopenedsorted.cpp moc_displaywindow.cpp moc_greatestdistancecenter.cpp moc_mainwindow.cpp moc_marlinspark.cpp moc_menuselectwindow.cpp moc_nationalteamsortdbystadiumname.cpp moc_parktypologysorted.cpp moc_rooftypesorted.cpp moc_seatingcapacitysorted.cpp moc_smallestdistancecenter.cpp moc_summarypage.cpp moc_teaminfowindow.cpp moc_teamnamesortedbystadium.cpp moc_teamnamesortedbyteamname.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_adminlogin.cpp moc_adminmaintence.cpp moc_americanteamssortedbyteamname.cpp moc_customtripwindow.cpp moc_dateopenedsorted.cpp moc_displaywindow.cpp moc_greatestdistancecenter.cpp moc_mainwindow.cpp moc_marlinspark.cpp moc_menuselectwindow.cpp moc_nationalteamsortdbystadiumname.cpp moc_parktypologysorted.cpp moc_rooftypesorted.cpp moc_seatingcapacitysorted.cpp moc_smallestdistancecenter.cpp moc_summarypage.cpp moc_teaminfowindow.cpp moc_teamnamesortedbystadium.cpp moc_teamnamesortedbyteamname.cpp
+	-$(DEL_FILE) moc_adminlogin.cpp moc_adminmaintence.cpp moc_americanteamssortedbyteamname.cpp moc_custominput.cpp moc_customtripwindow.cpp moc_dateopenedsorted.cpp moc_displaywindow.cpp moc_greatestdistancecenter.cpp moc_mainwindow.cpp moc_marlinspark.cpp moc_menuselectwindow.cpp moc_nationalteamsortdbystadiumname.cpp moc_parktypologysorted.cpp moc_rooftypesorted.cpp moc_seatingcapacitysorted.cpp moc_smallestdistancecenter.cpp moc_summarypage.cpp moc_teaminfowindow.cpp moc_teamnamesortedbystadium.cpp moc_teamnamesortedbyteamname.cpp
 moc_adminlogin.cpp: ../Project-2/adminlogin.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -835,7 +845,17 @@ moc_americanteamssortedbyteamname.cpp: ../Project-2/americanteamssortedbyteamnam
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
 	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/americanteamssortedbyteamname.h -o moc_americanteamssortedbyteamname.cpp
 
+moc_custominput.cpp: ../Project-2/custominput.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/mkspecs/macx-clang -I'/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/CS1D-project-2- real/Project/Project-2' -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtGui.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtSql.framework/Headers -I/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib ../Project-2/custominput.h -o moc_custominput.cpp
+
 moc_customtripwindow.cpp: ../Project-2/customtripwindow.h \
+		../Project-2/custominput.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Project-2/marlinspark.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/moc
@@ -933,6 +953,10 @@ moc_greatestdistancecenter.cpp: ../Project-2/greatestdistancecenter.h \
 moc_mainwindow.cpp: ../Project-2/mainwindow.h \
 		../Project-2/menuselectwindow.h \
 		../Project-2/customtripwindow.h \
+		../Project-2/custominput.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Project-2/marlinspark.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../Project-2/displaywindow.h \
@@ -978,6 +1002,10 @@ moc_marlinspark.cpp: ../Project-2/marlinspark.h \
 
 moc_menuselectwindow.cpp: ../Project-2/menuselectwindow.h \
 		../Project-2/customtripwindow.h \
+		../Project-2/custominput.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Project-2/marlinspark.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../Project-2/displaywindow.h \
@@ -1233,9 +1261,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_adminlogin.h ui_adminmaintence.h ui_americanteamssortedbyteamname.h ui_customtripwindow.h ui_dateopenedsorted.h ui_displaywindow.h ui_greatestdistancecenter.h ui_mainwindow.h ui_marlinspark.h ui_menuselectwindow.h ui_nationalteamsortdbystadiumname.h ui_parktypologysorted.h ui_rooftypesorted.h ui_seatingcapacitysorted.h ui_smallestdistancecenter.h ui_summarypage.h ui_teaminfowindow.h ui_teamnamesortedbystadium.h ui_teamnamesortedbyteamname.h
+compiler_uic_make_all: ui_adminlogin.h ui_adminmaintence.h ui_americanteamssortedbyteamname.h ui_custominput.h ui_customtripwindow.h ui_dateopenedsorted.h ui_displaywindow.h ui_greatestdistancecenter.h ui_mainwindow.h ui_marlinspark.h ui_menuselectwindow.h ui_nationalteamsortdbystadiumname.h ui_parktypologysorted.h ui_rooftypesorted.h ui_seatingcapacitysorted.h ui_smallestdistancecenter.h ui_summarypage.h ui_teaminfowindow.h ui_teamnamesortedbystadium.h ui_teamnamesortedbyteamname.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_adminlogin.h ui_adminmaintence.h ui_americanteamssortedbyteamname.h ui_customtripwindow.h ui_dateopenedsorted.h ui_displaywindow.h ui_greatestdistancecenter.h ui_mainwindow.h ui_marlinspark.h ui_menuselectwindow.h ui_nationalteamsortdbystadiumname.h ui_parktypologysorted.h ui_rooftypesorted.h ui_seatingcapacitysorted.h ui_smallestdistancecenter.h ui_summarypage.h ui_teaminfowindow.h ui_teamnamesortedbystadium.h ui_teamnamesortedbyteamname.h
+	-$(DEL_FILE) ui_adminlogin.h ui_adminmaintence.h ui_americanteamssortedbyteamname.h ui_custominput.h ui_customtripwindow.h ui_dateopenedsorted.h ui_displaywindow.h ui_greatestdistancecenter.h ui_mainwindow.h ui_marlinspark.h ui_menuselectwindow.h ui_nationalteamsortdbystadiumname.h ui_parktypologysorted.h ui_rooftypesorted.h ui_seatingcapacitysorted.h ui_smallestdistancecenter.h ui_summarypage.h ui_teaminfowindow.h ui_teamnamesortedbystadium.h ui_teamnamesortedbyteamname.h
 ui_adminlogin.h: ../Project-2/adminlogin.ui \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
 	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/adminlogin.ui -o ui_adminlogin.h
@@ -1247,6 +1275,10 @@ ui_adminmaintence.h: ../Project-2/adminmaintence.ui \
 ui_americanteamssortedbyteamname.h: ../Project-2/americanteamssortedbyteamname.ui \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
 	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/americanteamssortedbyteamname.ui -o ui_americanteamssortedbyteamname.h
+
+ui_custominput.h: ../Project-2/custominput.ui \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
+	/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic ../Project-2/custominput.ui -o ui_custominput.h
 
 ui_customtripwindow.h: ../Project-2/customtripwindow.ui \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/libexec/uic
@@ -1417,7 +1449,17 @@ americanteamssortedbyteamname.o: ../Project-2/americanteamssortedbyteamname.cpp 
 		ui_americanteamssortedbyteamname.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o americanteamssortedbyteamname.o ../Project-2/americanteamssortedbyteamname.cpp
 
+custominput.o: ../Project-2/custominput.cpp ../Project-2/custominput.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_custominput.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o custominput.o ../Project-2/custominput.cpp
+
 customtripwindow.o: ../Project-2/customtripwindow.cpp ../Project-2/customtripwindow.h \
+		../Project-2/custominput.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Project-2/marlinspark.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		ui_customtripwindow.h
@@ -1515,6 +1557,10 @@ greatestdistancecenter.o: ../Project-2/greatestdistancecenter.cpp ../Project-2/g
 main.o: ../Project-2/main.cpp ../Project-2/mainwindow.h \
 		../Project-2/menuselectwindow.h \
 		../Project-2/customtripwindow.h \
+		../Project-2/custominput.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Project-2/marlinspark.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../Project-2/displaywindow.h \
@@ -1556,6 +1602,10 @@ main.o: ../Project-2/main.cpp ../Project-2/mainwindow.h \
 mainwindow.o: ../Project-2/mainwindow.cpp ../Project-2/mainwindow.h \
 		../Project-2/menuselectwindow.h \
 		../Project-2/customtripwindow.h \
+		../Project-2/custominput.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Project-2/marlinspark.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../Project-2/displaywindow.h \
@@ -1593,8 +1643,6 @@ mainwindow.o: ../Project-2/mainwindow.cpp ../Project-2/mainwindow.h \
 		ui_mainwindow.h \
 		ui_adminlogin.h \
 		../Project-2/adminlogin.h \
-		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
-		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
 		../Project-2/adminmaintence.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/QFile \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtCore.framework/Headers/qfile.h \
@@ -1612,6 +1660,10 @@ marlinspark.o: ../Project-2/marlinspark.cpp ../Project-2/marlinspark.h \
 
 menuselectwindow.o: ../Project-2/menuselectwindow.cpp ../Project-2/menuselectwindow.h \
 		../Project-2/customtripwindow.h \
+		../Project-2/custominput.h \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Project-2/marlinspark.h \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/allentarasyuk/Documents/QT/6.6.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../Project-2/displaywindow.h \
@@ -1863,6 +1915,9 @@ teamnamesortedbyteamname.o: ../Project-2/teamnamesortedbyteamname.cpp ../Project
 		ui_teamnamesortedbyteamname.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o teamnamesortedbyteamname.o ../Project-2/teamnamesortedbyteamname.cpp
 
+travelplan.o: ../Project-2/travelplan.cpp ../Project-2/travelplan.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o travelplan.o ../Project-2/travelplan.cpp
+
 moc_adminlogin.o: moc_adminlogin.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_adminlogin.o moc_adminlogin.cpp
 
@@ -1871,6 +1926,9 @@ moc_adminmaintence.o: moc_adminmaintence.cpp
 
 moc_americanteamssortedbyteamname.o: moc_americanteamssortedbyteamname.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_americanteamssortedbyteamname.o moc_americanteamssortedbyteamname.cpp
+
+moc_custominput.o: moc_custominput.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_custominput.o moc_custominput.cpp
 
 moc_customtripwindow.o: moc_customtripwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_customtripwindow.o moc_customtripwindow.cpp

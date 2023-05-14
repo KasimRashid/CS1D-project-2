@@ -12,6 +12,7 @@ SOURCES += \
     adminlogin.cpp \
     adminmaintence.cpp \
     americanteamssortedbyteamname.cpp \
+    custominput.cpp \
     customtripwindow.cpp \
     dateopenedsorted.cpp \
     displaywindow.cpp \
@@ -29,11 +30,13 @@ SOURCES += \
     teaminfowindow.cpp \
     teamnamesortedbystadium.cpp \
     teamnamesortedbyteamname.cpp \
+    travelplan.cpp
 
 HEADERS += \
     adminlogin.h \
     adminmaintence.h \
     americanteamssortedbyteamname.h \
+    custominput.h \
     customtripwindow.h \
     dateopenedsorted.h \
     displaywindow.h \
@@ -50,11 +53,13 @@ HEADERS += \
     teaminfowindow.h \
     teamnamesortedbystadium.h \
     teamnamesortedbyteamname.h \
+    travelplan.h
 
 FORMS += \
     adminlogin.ui \
     adminmaintence.ui \
     americanteamssortedbyteamname.ui \
+    custominput.ui \
     customtripwindow.ui \
     dateopenedsorted.ui \
     displaywindow.ui \

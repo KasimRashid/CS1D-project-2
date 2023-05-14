@@ -32,7 +32,7 @@ public:
 
 
         // Allen's db file path
-        // QString path = "/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/Baseball.db";
+       // QString path = "/Users/allentarasyuk/Desktop/Baseball-Tour/CS1D-project-2/Baseball.db";
 
         qInfo() << path;
         db.setDatabaseName(path);
