@@ -34,7 +34,7 @@
      <string>Receipt</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="nextBtn">
     <property name="geometry">
      <rect>
       <x>470</x>
@@ -102,7 +102,7 @@
      <string>Menu</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="purchaseBtn">
     <property name="geometry">
      <rect>
       <x>360</x>

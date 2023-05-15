@@ -1,5 +1,6 @@
 #include "customtripwindow.h"
 #include "ui_customtripwindow.h"
+#include <QMessageBox>
 
 CustomTripWindow::CustomTripWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,6 +16,8 @@ CustomTripWindow::~CustomTripWindow()
 
 void CustomTripWindow::on_visitAllBtn_clicked()
 {
+
+
     visitAll = new MarlinsPark;
     visitAll->show();
 }
