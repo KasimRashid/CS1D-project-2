@@ -43,9 +43,116 @@ bool TravelPlan::Compare(const QString& team1, const QString& team2)
 
 
 
-void TravelPlan::FindClosestTeam(const QString& team, std::vector<QString> &teams, int size){
+void TravelPlan::FindClosestTeam(const QString& team, std::vector<QString> &teams, int size, bool marlinsPark, bool custom, vector<QString> customTeams){
 
    // const QString& college, std::vector<QString> &colleges, int size, bool saddleback, bool custom, vector<QString> customColleges
+
+     // string = "SELECT DISTINCT Destination_stadium FROM Distances WHERE Origin_stadium = 'Marlins Park' ORDER BY Distance ASC";
+
+
+    // Base Case
+        if(teams.size() < size)
+        {
+            // Opens database
+            db.open();
+            std::list<QString> End;
+            QSqlQuery q;
+            QString string;
+
+            // If the Saddleback plan or Custom plan execute a different sql statement
+            if(marlinsPark || custom)
+            {
+                // If custom add each college the user wants to visit into the sql statement
+                if(custom)
+                {
+
+                    string = "SELECT DISTINCT Destination_stadium FROM Distances WHERE Origin_stadium = \'" + team + "\'"
+                            + "AND Destination_stadium = \'";
+                    for(int i = 0; i < customTeams.size(); i++)
+                    {
+                        string += customTeams[i] + "\' OR Origin_stadium = \'" + team + "\'"
+                                + "AND Destination_stadium = \'";
+                    }
+                    string += "\' ORDER BY Distance ASC";
+                }
+                else
+                {
+                    // If Saddleback excluded the added college from the sql statement
+    //                string = "SELECT DISTINCT Ending_College FROM Distances WHERE Starting_College = \'" + college + "\'"
+    //                        + "AND NOT ENDING_COLLEGE = 'California State University, Fullerton' AND NOT ENDING_COLLEGE = 'University of Texas' ORDER BY Distance ASC";
+
+//                                    string = "SELECT DISTINCT Ending_College FROM Distances WHERE Starting_College = \'" + team + "\'"
+//                                            + "AND NOT ENDING_COLLEGE = 'University of Texas' AND NOT ENDING_COLLEGE = 'California State University, Fullerton' ORDER BY Distance ASC";
+
+
+
+//                                  string = "SELECT DISTINCT Destination_stadium FROM Distances WHERE Origin_stadium = 'Marlins Park' ORDER BY Distance ASC";
+
+
+                    string = QString("SELECT DISTINCT Destination_stadium FROM Distances WHERE Origin_stadium = '%1' ORDER BY Distance ASC").arg(team);
+
+
+                }
+
+                qDebug() << string;
+            }
+            else
+            {
+                // Default sql statement
+                string = "SELECT DISTINCT Destination_Stadium FROM Distances WHERE Origin_Stadium = \'" + team + "\' ORDER BY Distance ASC";
+            }
+
+
+
+            q.exec(string);
+
+
+            // Get first closest college from current college and add it to list
+            while(q.next())
+            {
+                End.push_back(q.value(0).toString());
+            }
+
+            // Check if the college has been visited
+            for(; !CheckIfTeamVisited(End.front(), teams); End.pop_front());
+
+            // Add to the vector if it hasn't
+            teams.push_back(End.front());
+
+            // Recall function until you reach amount of colleges wanted to visit
+            FindClosestTeam(End.front(), teams, size, marlinsPark, custom, customTeams);
+        }
+
+        db.close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //    // Base Case
@@ -60,6 +167,8 @@ void TravelPlan::FindClosestTeam(const QString& team, std::vector<QString> &team
 
 //     string = "SELECT DISTINCT Destination_stadium FROM Distances WHERE Origin_stadium = 'Marlins Park' ORDER BY Distance ASC";
 
+
+//qDebug() << string;
 
 //          q.exec(string);
 

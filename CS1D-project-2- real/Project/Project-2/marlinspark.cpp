@@ -44,11 +44,14 @@ MarlinsPark::MarlinsPark(QWidget *parent) :
        // Outputs the souvenirs of the current college
        QSqlQuery q;
 
-    q.exec("SELECT Item, Price FROM Souvenirs WHERE Team_name = 'Marlins Park'");
+    q.exec("SELECT Item, Price FROM Souvenirs WHERE Team_name = 'Miami Marlins'");
 
 
+//       q.exec("SELECT DISTINCT Team_name FROM Souvenirs");
 
 
+//       QString teamName = "Miami Marlins"; // Replace with the team you are interested in
+//       q.exec("SELECT Product, Price FROM Merchandise WHERE Team = '" + teamName + "'");
 
 
 
@@ -77,19 +80,8 @@ MarlinsPark::MarlinsPark(QWidget *parent) :
 
 
 
-       marlinsPark->FindClosestTeam(marlinsPark->currentTeam, marlinsPark->visitedTeams, 29);
+       marlinsPark->FindClosestTeam(marlinsPark->currentTeam, marlinsPark->visitedTeams, 11, true);
 
-
-
-//       try {
-//           marlinsPark->FindClosestTeam(marlinsPark->currentTeam, marlinsPark->visitedTeams, 29);
-//       } catch (const std::exception& e) {
-//           // Handle the exception, e.g., display an error message
-//           QMessageBox::critical(this, "Error", QString("An error occurred: %1").arg(e.what()));
-//       } catch (...) {
-//           // Handle any other exceptions not derived from std::exception
-//           QMessageBox::critical(this, "Error", "An unknown error occurred.");
-//       }
 
 
        marlinsPark->teamReceipt.cost = 0;
@@ -146,7 +138,7 @@ void MarlinsPark::on_purchaseBtn_clicked()
 void MarlinsPark::on_nextBtn_clicked()
 {
 
-    if(marlinsPark->teamIndex != 29)
+    if(marlinsPark->teamIndex != 10)
           {
               // Updates ui and variables for new college
               marlinsPark->teamReceipt.itemsBought.clear();

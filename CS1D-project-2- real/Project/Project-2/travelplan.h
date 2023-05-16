@@ -85,7 +85,7 @@ public:
       ~TravelPlan();
 
 
-    void FindClosestTeam(const QString& team, std::vector<QString> &teams, int size = 29);
+    void FindClosestTeam(const QString& team, std::vector<QString> &teams, int size = 11, bool marlinsPark = false, bool custom = false, vector<QString> customTeams = vector<QString>());
 
 
 
