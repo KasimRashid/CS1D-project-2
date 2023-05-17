@@ -10,6 +10,12 @@ namespace Ui {
 class MenuSelectWindow;
 }
 
+/// MenuSelectWindow
+///
+/// A window that provides the user the
+/// option to choose between displaying
+/// information or a custom trip
+
 class MenuSelectWindow : public QMainWindow
 {
     Q_OBJECT

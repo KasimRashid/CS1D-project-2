@@ -45,9 +45,7 @@ bool TravelPlan::Compare(const QString& team1, const QString& team2)
 
 void TravelPlan::FindClosestTeam(const QString& team, std::vector<QString> &teams, int size, bool marlinsPark, bool custom, vector<QString> customTeams){
 
-   // const QString& college, std::vector<QString> &colleges, int size, bool saddleback, bool custom, vector<QString> customColleges
 
-     // string = "SELECT DISTINCT Destination_stadium FROM Distances WHERE Origin_stadium = 'Marlins Park' ORDER BY Distance ASC";
 
 
     // Base Case
@@ -77,16 +75,7 @@ void TravelPlan::FindClosestTeam(const QString& team, std::vector<QString> &team
                 }
                 else
                 {
-                    // If Saddleback excluded the added college from the sql statement
-    //                string = "SELECT DISTINCT Ending_College FROM Distances WHERE Starting_College = \'" + college + "\'"
-    //                        + "AND NOT ENDING_COLLEGE = 'California State University, Fullerton' AND NOT ENDING_COLLEGE = 'University of Texas' ORDER BY Distance ASC";
 
-//                                    string = "SELECT DISTINCT Ending_College FROM Distances WHERE Starting_College = \'" + team + "\'"
-//                                            + "AND NOT ENDING_COLLEGE = 'University of Texas' AND NOT ENDING_COLLEGE = 'California State University, Fullerton' ORDER BY Distance ASC";
-
-
-
-//                                  string = "SELECT DISTINCT Destination_stadium FROM Distances WHERE Origin_stadium = 'Marlins Park' ORDER BY Distance ASC";
 
 
                     string = QString("SELECT DISTINCT Destination_stadium FROM Distances WHERE Origin_stadium = '%1' ORDER BY Distance ASC").arg(team);
@@ -107,7 +96,7 @@ void TravelPlan::FindClosestTeam(const QString& team, std::vector<QString> &team
             q.exec(string);
 
 
-            // Get first closest college from current college and add it to list
+            // Get first closest stadium from current stadium and add it to list
             while(q.next())
             {
                 End.push_back(q.value(0).toString());

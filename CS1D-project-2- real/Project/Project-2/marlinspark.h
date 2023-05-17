@@ -10,6 +10,12 @@ namespace Ui {
 class MarlinsPark;
 }
 
+/// Marlins Park
+///
+/// Provides the user the ability to traverse
+/// all of the stadiums and pick souvenirs
+/// along the way
+
 class MarlinsPark : public QMainWindow
 {
     Q_OBJECT
@@ -41,7 +47,7 @@ public:
 
 
 
-         /// Opens database
+                /// Opens database
                  ///
                  /// Calls database method to open database and returns to console
                  /// if opened properly
@@ -79,12 +85,6 @@ public:
 
 
                   void DisplayReceipt();
-
-
-
-
-
-
 
 
 

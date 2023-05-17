@@ -44,7 +44,7 @@ MarlinsPark::MarlinsPark(QWidget *parent) :
        // Outputs the souvenirs of the current college
        QSqlQuery q;
 
-    q.exec("SELECT Item, Price FROM Souvenirs WHERE Team_name = 'Miami Marlins'");
+    q.exec("SELECT Item, Price FROM Souvenirs2 WHERE Stadium_name = 'Marlins Park'");
 
 
 //       q.exec("SELECT DISTINCT Team_name FROM Souvenirs");
@@ -110,7 +110,7 @@ void MarlinsPark::on_purchaseBtn_clicked()
         marlinsPark->teamReceipt.itemsBought.push_back(s);
 
         // Gets the cost of the souvenir item
-        string = "SELECT Price FROM Souvenirs WHERE Item = \'" + s + "\'";
+        string = "SELECT Price FROM Souvenirs2 WHERE Item = \'" + s + "\'";
 
         q.exec(string);
 
@@ -152,7 +152,8 @@ void MarlinsPark::on_nextBtn_clicked()
               ConnOpen();
               QSqlQuery q;
 
-              qInfo() << marlinsPark->visitedTeams[marlinsPark->teamIndex];
+              qInfo() << "Check:"<< marlinsPark->visitedTeams[marlinsPark->teamIndex];
+
 
               marlinsPark->currentTeam = marlinsPark->visitedTeams[marlinsPark->teamIndex];
 
@@ -160,7 +161,7 @@ void MarlinsPark::on_nextBtn_clicked()
 
               // Displays the souvenir of the current college
 
-             q.exec("SELECT Item, Price FROM Souvenirs WHERE Team_name = \'" + marlinsPark->currentTeam + "\'");
+             q.exec("SELECT Item, Price FROM Souvenirs2 WHERE Stadium_name = \'" + marlinsPark->currentTeam + "\'");
 
               QString data = "";
               QString dataCombo = "";
@@ -171,6 +172,7 @@ void MarlinsPark::on_nextBtn_clicked()
                   dataCombo = q.value(0).toString();
                   ui->comboBox->addItem(q.value(0).toString());
                   data += q.value(0).toString() + ": $" + q.value(1).toString() + "\n";
+
 
               }
               ui->textBrowser->setText(data);

@@ -9,6 +9,11 @@ namespace Ui {
 class adminLogin;
 }
 
+/// adminLogin class definition.
+///
+/// Allows the admin to acess the admin page
+/// by entering a user name and password
+
 class adminLogin : public QDialog
 {
     Q_OBJECT

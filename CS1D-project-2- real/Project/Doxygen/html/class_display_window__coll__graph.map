@@ -1,0 +1,15 @@
+<map id="DisplayWindow" name="DisplayWindow">
+<area shape="rect" id="node1" title=" " alt="" coords="661,265,775,290"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,262,112,287"/>
+<area shape="rect" id="node3" href="$classteam_info_window.html" title=" " alt="" coords="219,43,339,69"/>
+<area shape="rect" id="node4" href="$classteam_name_sorted_by_team_name.html" title=" " alt="" coords="175,93,382,118"/>
+<area shape="rect" id="node5" href="$classteam_name_sorted_by_stadium.html" title=" " alt="" coords="185,142,373,167"/>
+<area shape="rect" id="node6" href="$classamerican_teams_sorted_by_team_name.html" title=" " alt="" coords="161,191,396,217"/>
+<area shape="rect" id="node7" href="$classnational_team_sortd_by_stadium_name.html" title=" " alt="" coords="164,241,393,266"/>
+<area shape="rect" id="node8" href="$classpark_typology_sorted.html" title=" " alt="" coords="210,290,347,315"/>
+<area shape="rect" id="node9" href="$classroof_type_sorted.html" title=" " alt="" coords="223,339,334,365"/>
+<area shape="rect" id="node10" href="$classdate_opened_sorted.html" title=" " alt="" coords="213,389,344,414"/>
+<area shape="rect" id="node11" href="$classseating_capacity_sorted.html" title=" " alt="" coords="201,438,356,463"/>
+<area shape="rect" id="node12" href="$classgreatest_distance_center.html" title=" " alt="" coords="199,487,359,513"/>
+<area shape="rect" id="node13" href="$classsmallest_distance_center.html" title=" " alt="" coords="197,537,360,562"/>
+</map>

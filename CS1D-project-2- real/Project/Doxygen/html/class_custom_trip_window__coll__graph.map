@@ -1,0 +1,10 @@
+<map id="CustomTripWindow" name="CustomTripWindow">
+<area shape="rect" id="node1" title=" " alt="" coords="117,284,254,309"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,112,31"/>
+<area shape="rect" id="node3" href="$class_marlins_park.html" title=" " alt="" coords="140,196,231,221"/>
+<area shape="rect" id="node6" href="$classsummarypage.html" title=" " alt="" coords="96,108,200,133"/>
+<area shape="rect" id="node4" href="$class_travel_plan.html" title=" " alt="" coords="351,108,435,133"/>
+<area shape="rect" id="node5" href="$struct_travel_plan_1_1_receipt.html" title=" " alt="" coords="227,5,365,31"/>
+<area shape="rect" id="node7" href="$classcustominput.html" title=" " alt="" coords="351,196,444,221"/>
+<area shape="rect" id="node8" title=" " alt="" coords="460,108,529,133"/>
+</map>

@@ -18,6 +18,12 @@ namespace Ui {
 class DisplayWindow;
 }
 
+/// DisplayWindow
+///
+/// Provides the user a selection of buttons
+/// that would provide relevent information about
+/// stadiums, teams, and souvenirs
+
 class DisplayWindow : public QMainWindow
 {
     Q_OBJECT

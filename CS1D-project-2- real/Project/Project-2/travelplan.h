@@ -7,8 +7,6 @@
 
 using namespace std;
 
-
-
 /// TravelPlan class
 ///
 /// Holds the functionality and the data used for the different
@@ -84,15 +82,28 @@ public:
 
       ~TravelPlan();
 
+      /// Finds closest team
+       ///
+       /// This method recursively finds the closest team
+       /// @param team team to find closest team to
+       /// @param teams vector of teams that will be visited
+       /// @param size amount of teamss wanting to visit
+       /// @param MarlinsPark if the method is being used for the initial Marlins Park plan
+       /// @param custom if the method is being used for the custom plan
+       /// @param customTeas custom set of colleges to visit
+
 
     void FindClosestTeam(const QString& team, std::vector<QString> &teams, int size = 11, bool marlinsPark = false, bool custom = false, vector<QString> customTeams = vector<QString>());
 
 
 
+    /// Checks if Team was visited
+    ///
+    /// Goes through the vector of teams to see if the passed college was already visited
+    /// @param team team to check if visited
+    /// @param visitedteamss vector of team already visited
+
     bool CheckIfTeamVisited(const QString& team, std::vector<QString> & visitedTeams);
-
-
-//const QString& college, std::vector<QString>& visitedColleges
 
 
 

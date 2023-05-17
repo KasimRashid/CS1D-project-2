@@ -9,6 +9,11 @@ namespace Ui {
 class CustomTripWindow;
 }
 
+/// customTripWindow
+///
+/// Displays options to either visit all
+/// stadiums or selet the custom plan
+
 class CustomTripWindow : public QMainWindow
 {
     Q_OBJECT

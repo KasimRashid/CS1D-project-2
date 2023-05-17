@@ -7,6 +7,12 @@ namespace Ui {
 class custominput;
 }
 
+
+/// customInput
+///
+/// Gets the starting team and all the other
+/// teamss the user wants to visit on their custom trip
+
 class custominput : public QDialog
 {
     Q_OBJECT

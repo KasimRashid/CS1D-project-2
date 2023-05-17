@@ -10,14 +10,17 @@ namespace Ui {
 class summarypage;
 }
 
+//// summarypage
+///
+/// Shows that final receipt and the
+/// final distance traveled
+
 class summarypage : public QMainWindow
 {
     Q_OBJECT
 
 public:
     explicit summarypage(QWidget *parent = nullptr);
-
-
 
 
     /// Gets data to output to ui
