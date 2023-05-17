@@ -42,3 +42,10 @@ void MenuSelectWindow::on_customButton_clicked()
 
 }
 
+
+void MenuSelectWindow::on_mstButton_2_clicked()
+{
+    mst = new class mst;
+    mst->show();
+}
+

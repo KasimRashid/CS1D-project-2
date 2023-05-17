@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "ui_adminlogin.h"
 #include "adminlogin.h"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)

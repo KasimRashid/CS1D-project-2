@@ -21,6 +21,7 @@ SOURCES += \
     mainwindow.cpp \
     marlinspark.cpp \
     menuselectwindow.cpp \
+    mst.cpp \
     nationalteamsortdbystadiumname.cpp \
     parktypologysorted.cpp \
     rooftypesorted.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     mainwindow.h \
     marlinspark.h \
     menuselectwindow.h \
+    mst.h \
     nationalteamsortdbystadiumname.h \
     parktypologysorted.h \
     rooftypesorted.h \
@@ -67,6 +69,7 @@ FORMS += \
     mainwindow.ui \
     marlinspark.ui \
     menuselectwindow.ui \
+    mst.ui \
     nationalteamsortdbystadiumname.ui \
     parktypologysorted.ui \
     rooftypesorted.ui \

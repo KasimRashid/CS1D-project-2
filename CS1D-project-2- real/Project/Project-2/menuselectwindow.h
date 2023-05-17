@@ -3,6 +3,7 @@
 
 #include "customtripwindow.h"
 #include "displaywindow.h"
+#include "mst.h"
 
 #include <QMainWindow>
 
@@ -35,11 +36,14 @@ private slots:
 
 
 
+    void on_mstButton_2_clicked();
+
 private:
     Ui::MenuSelectWindow *ui;
     DisplayWindow *displaywindow;
 
     CustomTripWindow *customTripWindow;
+    mst *mst;
 //    MainWindow *mainwindow;
 };
 
