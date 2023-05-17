@@ -49,3 +49,10 @@ void MenuSelectWindow::on_mstButton_2_clicked()
     mst->show();
 }
 
+
+void MenuSelectWindow::on_dfsButton_clicked()
+{
+    dfs = new class dfs;
+    dfs->show();
+}
+

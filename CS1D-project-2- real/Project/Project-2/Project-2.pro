@@ -15,6 +15,7 @@ SOURCES += \
     custominput.cpp \
     customtripwindow.cpp \
     dateopenedsorted.cpp \
+    dfs.cpp \
     displaywindow.cpp \
     greatestdistancecenter.cpp \
     main.cpp \
@@ -40,6 +41,7 @@ HEADERS += \
     custominput.h \
     customtripwindow.h \
     dateopenedsorted.h \
+    dfs.h \
     displaywindow.h \
     greatestdistancecenter.h \
     mainwindow.h \
@@ -64,6 +66,7 @@ FORMS += \
     custominput.ui \
     customtripwindow.ui \
     dateopenedsorted.ui \
+    dfs.ui \
     displaywindow.ui \
     greatestdistancecenter.ui \
     mainwindow.ui \
